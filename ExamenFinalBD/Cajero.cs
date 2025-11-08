@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ExamenFinalBD
 {
-    public partial class CajeroClient : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Cajero : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public CajeroClient()
+        public Cajero()
         {
             InitializeComponent();
         }

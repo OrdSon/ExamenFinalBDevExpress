@@ -33,7 +33,7 @@ namespace ExamenFinalBD
             UserLookAndFeel.Default.SetSkinStyle("Office 2019 Colorful");
             AppearanceObject.DefaultFont = new Font("Microsoft JhengHei UI", 8);
 
-            Application.Run(new Login());
+            Application.Run(new  Form());
 
         }
     }
