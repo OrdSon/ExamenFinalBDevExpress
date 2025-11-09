@@ -67,7 +67,9 @@
     <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="HealthChecks.AzureSearch, Version=9.0.0.0, Culture=neutral, PublicKeyToken=2783471aaf72b3d9, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNetCore.HealthChecks.AzureSearch.9.0.0\lib\netstandard2.0\HealthChecks.AzureSearch.dll</HintPath>
     </Reference>
@@ -181,6 +183,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tecnico\BLL\General.cs" />
+    <Compile Include="Tecnico\BuscaContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\BuscaContrato.Designer.cs">
+      <DependentUpon>BuscaContrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tecnico\CreaReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +220,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tecnico\BuscaContrato.resx">
+      <DependentUpon>BuscaContrato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tecnico\CreaReportes.resx">
       <DependentUpon>CreaReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,5 +258,6 @@
   <ItemGroup>
     <None Include="Resources\Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

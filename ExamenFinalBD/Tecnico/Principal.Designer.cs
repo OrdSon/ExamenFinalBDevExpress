@@ -63,7 +63,7 @@
             this.barButtonItemCrear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemCrear.ImageOptions.Image")));
             this.barButtonItemCrear.Name = "barButtonItemCrear";
             this.barButtonItemCrear.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-
+            this.barButtonItemCrear.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCrear_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -80,7 +80,7 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 1049);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 963);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(6);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -95,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::ExamenFinalBD.Properties.Resources.Imagen_de_WhatsApp_2025_11_07_a_las_11_11_30_2310c900;
-            this.ClientSize = new System.Drawing.Size(1071, 1079);
+            this.ClientSize = new System.Drawing.Size(1071, 993);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,9 +103,9 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Principal";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Tecnicos";
-
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

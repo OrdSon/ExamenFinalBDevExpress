@@ -21,8 +21,12 @@ namespace ExamenFinalBD.Tecnico
             InitializeComponent();
         }
 
-
-
+        private void barButtonItemCrear_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            CreaReportes crea = new CreaReportes();
+            crea.MdiParent=this;
+            crea.Show();
+        }
     }
 
 }

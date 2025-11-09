@@ -17,5 +17,24 @@ namespace ExamenFinalBD.Tecnico
         {
             InitializeComponent();
         }
+
+        private void simpleButtonBucaContrato_Click(object sender, EventArgs e)
+        {
+            if(textEditNoContrato.Text=="")
+            {
+                redireccionaContrato();
+            }
+            
+        }
+        public void redireccionaContrato()
+        {
+            using (BuscaContrato busca = new BuscaContrato())
+            {
+                if (busca.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+            }
+        }
     }
 }
