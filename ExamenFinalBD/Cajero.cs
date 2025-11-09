@@ -17,5 +17,15 @@ namespace ExamenFinalBD
         {
             InitializeComponent();
         }
+
+        private void pictureEdit4_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

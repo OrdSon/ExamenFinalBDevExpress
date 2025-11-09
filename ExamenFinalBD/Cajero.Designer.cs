@@ -33,26 +33,26 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -66,7 +66,7 @@
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(955, 195);
+            this.ribbon.Size = new System.Drawing.Size(1201, 195);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // ribbonPage1
@@ -83,19 +83,31 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 620);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 784);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(955, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1201, 30);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.pictureEdit4);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 514);
+            this.panelControl1.Location = new System.Drawing.Point(0, 678);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(955, 106);
+            this.panelControl1.Size = new System.Drawing.Size(1201, 106);
             this.panelControl1.TabIndex = 2;
+            // 
+            // pictureEdit4
+            // 
+            this.pictureEdit4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit4.EditValue = global::ExamenFinalBD.Properties.Resources.morado;
+            this.pictureEdit4.Location = new System.Drawing.Point(2, 2);
+            this.pictureEdit4.MenuManager = this.ribbon;
+            this.pictureEdit4.Name = "pictureEdit4";
+            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit4.Size = new System.Drawing.Size(1197, 102);
+            this.pictureEdit4.TabIndex = 0;
+            this.pictureEdit4.EditValueChanged += new System.EventHandler(this.pictureEdit4_EditValueChanged);
             // 
             // panelControl2
             // 
@@ -103,17 +115,40 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl2.Location = new System.Drawing.Point(0, 195);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(238, 319);
+            this.panelControl2.Size = new System.Drawing.Size(238, 483);
             this.panelControl2.TabIndex = 3;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.EditValue = global::ExamenFinalBD.Properties.Resources.Google_AI_Studio_2025_11_08T21_44_27_576Z;
+            this.pictureEdit1.Location = new System.Drawing.Point(2, 2);
+            this.pictureEdit1.MenuManager = this.ribbon;
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(234, 479);
+            this.pictureEdit1.TabIndex = 0;
+            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.pictureEdit3);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl3.Location = new System.Drawing.Point(717, 195);
+            this.panelControl3.Location = new System.Drawing.Point(963, 195);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(238, 319);
+            this.panelControl3.Size = new System.Drawing.Size(238, 483);
             this.panelControl3.TabIndex = 4;
+            // 
+            // pictureEdit3
+            // 
+            this.pictureEdit3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit3.EditValue = global::ExamenFinalBD.Properties.Resources.Google_AI_Studio_2025_11_08T21_44_30_370Z;
+            this.pictureEdit3.Location = new System.Drawing.Point(2, 2);
+            this.pictureEdit3.MenuManager = this.ribbon;
+            this.pictureEdit3.Name = "pictureEdit3";
+            this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit3.Size = new System.Drawing.Size(234, 479);
+            this.pictureEdit3.TabIndex = 0;
             // 
             // panelControl4
             // 
@@ -121,54 +156,25 @@
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(238, 195);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(479, 319);
+            this.panelControl4.Size = new System.Drawing.Size(725, 483);
             this.panelControl4.TabIndex = 5;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.Location = new System.Drawing.Point(2, 2);
-            this.pictureEdit1.MenuManager = this.ribbon;
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(234, 315);
-            this.pictureEdit1.TabIndex = 0;
             // 
             // pictureEdit2
             // 
             this.pictureEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit2.EditValue = global::ExamenFinalBD.Properties.Resources.Google_AI_Studio_2025_11_08T21_44_35_043Z;
             this.pictureEdit2.Location = new System.Drawing.Point(2, 2);
             this.pictureEdit2.MenuManager = this.ribbon;
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Size = new System.Drawing.Size(475, 315);
+            this.pictureEdit2.Size = new System.Drawing.Size(721, 479);
             this.pictureEdit2.TabIndex = 0;
-            // 
-            // pictureEdit3
-            // 
-            this.pictureEdit3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit3.Location = new System.Drawing.Point(2, 2);
-            this.pictureEdit3.MenuManager = this.ribbon;
-            this.pictureEdit3.Name = "pictureEdit3";
-            this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit3.Size = new System.Drawing.Size(234, 315);
-            this.pictureEdit3.TabIndex = 0;
-            // 
-            // pictureEdit4
-            // 
-            this.pictureEdit4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit4.Location = new System.Drawing.Point(2, 2);
-            this.pictureEdit4.MenuManager = this.ribbon;
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Size = new System.Drawing.Size(951, 102);
-            this.pictureEdit4.TabIndex = 0;
             // 
             // Cajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 650);
+            this.ClientSize = new System.Drawing.Size(1201, 814);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
@@ -182,16 +188,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
