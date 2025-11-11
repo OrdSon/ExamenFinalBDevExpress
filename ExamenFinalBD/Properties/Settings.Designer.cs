@@ -27,8 +27,7 @@ namespace ExamenFinalBD.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql5113.site4now.net;Initial Catalog=db_ac0671_final;Persist Security" +
-            " Info=True;User ID=db_ac0671_final_admin;Encrypt=False;TrustServerCertificate=Tr" +
-            "ue")]
+            " Info=True;User ID=db_ac0671_final_admin;TrustServerCertificate=True")]
         public string db_ac0671_finalConnectionString {
             get {
                 return ((string)(this["db_ac0671_finalConnectionString"]));

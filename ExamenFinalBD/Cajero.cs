@@ -11,11 +11,21 @@ using System.Windows.Forms;
 
 namespace ExamenFinalBD
 {
-    public partial class CajeroClient : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Cajero : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public CajeroClient()
+        public Cajero()
         {
             InitializeComponent();
+        }
+
+        private void pictureEdit4_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_ac0671_final" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Admin" Member="Admin">
+    <Type Name="Admin">
+      <Column Name="id_admin" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_admin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_admin" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nit_admin" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="dpi_admin" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_nacimiento_admin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_contrato_admin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_despido_admin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Usuario_Admin" Member="Usuario" ThisKey="id_usuario" OtherKey="id_usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bitacora" Member="Bitacora">
+    <Type Name="Bitacora">
+      <Column Name="id_bitacora" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_peloton" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="id_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_visita_tecnica" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Falla_Bitacora" Member="Falla" ThisKey="id_falla" OtherKey="id_falla" Type="Falla" IsForeignKey="true" />
+      <Association Name="Peloton_Bitacora" Member="Peloton" ThisKey="id_peloton" OtherKey="id_peloton" Type="Peloton" IsForeignKey="true" />
+      <Association Name="Visita_tecnica_Bitacora" Member="Visita_tecnica" ThisKey="id_visita_tecnica" OtherKey="id_visita_tecnica" Type="Visita_tecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cajero" Member="Cajero">
+    <Type Name="Cajero">
+      <Column Name="id_cajero" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_cajero" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_cajero" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nit_cajero" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="dpi_cajero" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_nacimiento_cajero" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_contrato_cajero" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_despido_cajero" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Cajero_Factura" Member="Factura" ThisKey="id_cajero" OtherKey="id_cajero" Type="Factura" />
+      <Association Name="Usuario_Cajero" Member="Usuario" ThisKey="id_usuario" OtherKey="id_usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Canal" Member="Canal">
+    <Type Name="Canal">
+      <Column Name="id_canal" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_canal" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="numero_canal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Canal_Canal_categoria_servicio" Member="Canal_categoria_servicio" ThisKey="id_canal" OtherKey="id_canal" Type="Canal_categoria_servicio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Canal_categoria_servicio" Member="Canal_categoria_servicio">
+    <Type Name="Canal_categoria_servicio">
+      <Column Name="id_canal_categoria_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_canal" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_categoria_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Canal_Canal_categoria_servicio" Member="Canal" ThisKey="id_canal" OtherKey="id_canal" Type="Canal" IsForeignKey="true" />
+      <Association Name="Categoria_servicio_Canal_categoria_servicio" Member="Categoria_servicio" ThisKey="id_categoria_servicio" OtherKey="id_categoria_servicio" Type="Categoria_servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categoria_servicio" Member="Categoria_servicio">
+    <Type Name="Categoria_servicio">
+      <Column Name="id_categoria_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_disponibilidad_telefono" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="id_velocidad_internet" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="nombre_categoria_servicio" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Categoria_servicio_Canal_categoria_servicio" Member="Canal_categoria_servicio" ThisKey="id_categoria_servicio" OtherKey="id_categoria_servicio" Type="Canal_categoria_servicio" />
+      <Association Name="Categoria_servicio_Tipo_servicio" Member="Tipo_servicio" ThisKey="id_categoria_servicio" OtherKey="id_categoria_servicio" Type="Tipo_servicio" />
+      <Association Name="Disponibilidad_telefono_Categoria_servicio" Member="Disponibilidad_telefono" ThisKey="id_disponibilidad_telefono" OtherKey="id_disponibilidad_telefono" Type="Disponibilidad_telefono" IsForeignKey="true" />
+      <Association Name="Velocidad_internet_Categoria_servicio" Member="Velocidad_internet" ThisKey="id_velocidad_internet" OtherKey="id_velocidad_internet" Type="Velocidad_internet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cliente" Member="Cliente">
+    <Type Name="Cliente">
+      <Column Name="id_cliente" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dpi" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono_primario" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono_secundario" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Contrato" Member="Contrato" ThisKey="id_cliente" OtherKey="id_cliente" Type="Contrato" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Configuracion" Member="Configuracion">
+    <Type Name="Configuracion">
+      <Column Name="id_configuracion" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="monto_mora" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="monto_inscripcion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contrato" Member="Contrato">
+    <Type Name="Contrato">
+      <Column Name="id_contrato" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_info_cobro" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_municipio" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_inicio" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_fin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_instalacion" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="saldo_total" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_estado_contrato" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Contrato_Servicio" Member="Servicio" ThisKey="id_contrato" OtherKey="id_contrato" Type="Servicio" />
+      <Association Name="Contrato_Visita_tecnica" Member="Visita_tecnica" ThisKey="id_contrato" OtherKey="id_contrato" Type="Visita_tecnica" />
+      <Association Name="Cliente_Contrato" Member="Cliente" ThisKey="id_cliente" OtherKey="id_cliente" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Estado_contrato_Contrato" Member="Estado_contrato" ThisKey="id_estado_contrato" OtherKey="id_estado_contrato" Type="Estado_contrato" IsForeignKey="true" />
+      <Association Name="Info_cobro_Contrato" Member="Info_cobro" ThisKey="id_info_cobro" OtherKey="id_info_cobro" Type="Info_cobro" IsForeignKey="true" />
+      <Association Name="Municipio_Contrato" Member="Municipio" ThisKey="id_municipio" OtherKey="id_municipio" Type="Municipio" IsForeignKey="true" />
+      <Association Name="Usuario_Contrato" Member="Usuario" ThisKey="id_usuario" OtherKey="id_usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Corte_servicio" Member="Corte_servicio">
+    <Type Name="Corte_servicio">
+      <Column Name="id_corte_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fecha_corte" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="id_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipo_corte" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Corte_servicio_Recision" Member="Recision" ThisKey="id_corte_servicio" OtherKey="id_corte_servicio" Type="Recision" />
+      <Association Name="Servicio_Corte_servicio" Member="Servicio" ThisKey="id_servicio" OtherKey="id_servicio" Type="Servicio" IsForeignKey="true" />
+      <Association Name="Tipo_corte_Corte_servicio" Member="Tipo_corte" ThisKey="id_tipo_corte" OtherKey="id_tipo_corte" Type="Tipo_corte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuota" Member="Cuota">
+    <Type Name="Cuota">
+      <Column Name="id_cuota" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fecha_vencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_estado_factura" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Cuota_Factura" Member="Factura" ThisKey="id_cuota" OtherKey="id_cuota" Type="Factura" />
+      <Association Name="Estado_cuota_Cuota" Member="Estado_cuota" ThisKey="id_estado_factura" OtherKey="id_estado_factura" Type="Estado_cuota" IsForeignKey="true" />
+      <Association Name="Servicio_Cuota" Member="Servicio" ThisKey="id_servicio" OtherKey="id_servicio" Type="Servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Departamento" Member="Departamento">
+    <Type Name="Departamento">
+      <Column Name="id_departamento" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_departamento" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Association Name="Departamento_Municipio" Member="Municipio" ThisKey="id_departamento" OtherKey="id_departamento" Type="Municipio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Disponibilidad_telefono" Member="Disponibilidad_telefono">
+    <Type Name="Disponibilidad_telefono">
+      <Column Name="id_disponibilidad_telefono" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cantidad_minutos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Disponibilidad_telefono_Categoria_servicio" Member="Categoria_servicio" ThisKey="id_disponibilidad_telefono" OtherKey="id_disponibilidad_telefono" Type="Categoria_servicio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_contrato" Member="Estado_contrato">
+    <Type Name="Estado_contrato">
+      <Column Name="id_estado_contrato" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_estado_contrato" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Estado_contrato_Contrato" Member="Contrato" ThisKey="id_estado_contrato" OtherKey="id_estado_contrato" Type="Contrato" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_cuota" Member="Estado_cuota">
+    <Type Name="Estado_cuota">
+      <Column Name="id_estado_factura" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_estado_factura" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Estado_cuota_Cuota" Member="Cuota" ThisKey="id_estado_factura" OtherKey="id_estado_factura" Type="Cuota" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_falla" Member="Estado_falla">
+    <Type Name="Estado_falla">
+      <Column Name="id_estado_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Estado_falla_Falla" Member="Falla" ThisKey="id_estado_falla" OtherKey="id_estado_falla" Type="Falla" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_pago" Member="Estado_pago">
+    <Type Name="Estado_pago">
+      <Column Name="id_estado_pago" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_estado_pago" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Estado_pago_Pago" Member="Pago" ThisKey="id_estado_pago" OtherKey="id_estado_pago" Type="Pago" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estado_usuario" Member="Estado_usuario">
+    <Type Name="Estado_usuario">
+      <Column Name="id_estado_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_estado_usuario" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Estado_usuario_Usuario" Member="Usuario" ThisKey="id_estado_usuario" OtherKey="id_estado_usuario" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factura" Member="Factura">
+    <Type Name="Factura">
+      <Column Name="id_factura" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_cajero" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_pago" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="total_factura" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_cuota" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="nit_factura" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_factura" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="cf_factura" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Cajero_Factura" Member="Cajero" ThisKey="id_cajero" OtherKey="id_cajero" Type="Cajero" IsForeignKey="true" />
+      <Association Name="Cuota_Factura" Member="Cuota" ThisKey="id_cuota" OtherKey="id_cuota" Type="Cuota" IsForeignKey="true" />
+      <Association Name="Pago_Factura" Member="Pago" ThisKey="id_pago" OtherKey="id_pago" Type="Pago" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Falla" Member="Falla">
+    <Type Name="Falla">
+      <Column Name="id_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_tipo_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipo_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_estado_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_visita_tecnica" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Falla_Bitacora" Member="Bitacora" ThisKey="id_falla" OtherKey="id_falla" Type="Bitacora" />
+      <Association Name="Falla_repuesto_falla" Member="repuesto_falla" ThisKey="id_falla" OtherKey="id_falla" Type="repuesto_falla" />
+      <Association Name="Estado_falla_Falla" Member="Estado_falla" ThisKey="id_estado_falla" OtherKey="id_estado_falla" Type="Estado_falla" IsForeignKey="true" />
+      <Association Name="Tipo_falla_Falla" Member="Tipo_falla" ThisKey="id_tipo_falla" OtherKey="id_tipo_falla" Type="Tipo_falla" IsForeignKey="true" />
+      <Association Name="Tipo_servicio_Falla" Member="Tipo_servicio" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Tipo_servicio" IsForeignKey="true" />
+      <Association Name="Visita_tecnica_Falla" Member="Visita_tecnica" ThisKey="id_visita_tecnica" OtherKey="id_visita_tecnica" Type="Visita_tecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Info_cobro" Member="Info_cobro">
+    <Type Name="Info_cobro">
+      <Column Name="id_info_cobro" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="id_municipio" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Info_cobro_Contrato" Member="Contrato" ThisKey="id_info_cobro" OtherKey="id_info_cobro" Type="Contrato" />
+      <Association Name="Municipio_Info_cobro" Member="Municipio" ThisKey="id_municipio" OtherKey="id_municipio" Type="Municipio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Instalacion_servicio" Member="Instalacion_servicio">
+    <Type Name="Instalacion_servicio">
+      <Column Name="id_instalacion_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_peloton" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_solicitud" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_ejecucion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Instalacion_servicio_Servicio" Member="Servicio" ThisKey="id_instalacion_servicio" OtherKey="id_instalacion_servicio" Type="Servicio" />
+      <Association Name="Peloton_Instalacion_servicio" Member="Peloton" ThisKey="id_peloton" OtherKey="id_peloton" Type="Peloton" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Municipio" Member="Municipio">
+    <Type Name="Municipio">
+      <Column Name="id_municipio" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_municipio" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="id_departamento" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Municipio_Contrato" Member="Contrato" ThisKey="id_municipio" OtherKey="id_municipio" Type="Contrato" />
+      <Association Name="Municipio_Info_cobro" Member="Info_cobro" ThisKey="id_municipio" OtherKey="id_municipio" Type="Info_cobro" />
+      <Association Name="Departamento_Municipio" Member="Departamento" ThisKey="id_departamento" OtherKey="id_departamento" Type="Departamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pago" Member="Pago">
+    <Type Name="Pago">
+      <Column Name="id_pago" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sub_total" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estado_pago" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipo_pago" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Pago_Factura" Member="Factura" ThisKey="id_pago" OtherKey="id_pago" Type="Factura" />
+      <Association Name="Estado_pago_Pago" Member="Estado_pago" ThisKey="id_estado_pago" OtherKey="id_estado_pago" Type="Estado_pago" IsForeignKey="true" />
+      <Association Name="Servicio_Pago" Member="Servicio" ThisKey="id_servicio" OtherKey="id_servicio" Type="Servicio" IsForeignKey="true" />
+      <Association Name="Tipo_pago_Pago" Member="Tipo_pago" ThisKey="id_tipo_pago" OtherKey="id_tipo_pago" Type="Tipo_pago" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Peloton" Member="Peloton">
+    <Type Name="Peloton">
+      <Column Name="id_peloton" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_tecnico" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Peloton_Bitacora" Member="Bitacora" ThisKey="id_peloton" OtherKey="id_peloton" Type="Bitacora" />
+      <Association Name="Peloton_Instalacion_servicio" Member="Instalacion_servicio" ThisKey="id_peloton" OtherKey="id_peloton" Type="Instalacion_servicio" />
+      <Association Name="Peloton_Visita_tecnica" Member="Visita_tecnica" ThisKey="id_peloton" OtherKey="id_peloton" Type="Visita_tecnica" />
+      <Association Name="Tecnico_Peloton" Member="Tecnico" ThisKey="id_tecnico" OtherKey="id_tecnico" Type="Tecnico" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recision" Member="Recision">
+    <Type Name="Recision">
+      <Column Name="id_recision" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fecha_recision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="autorizacion_recision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="id_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_corte_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Corte_servicio_Recision" Member="Corte_servicio" ThisKey="id_corte_servicio" OtherKey="id_corte_servicio" Type="Corte_servicio" IsForeignKey="true" />
+      <Association Name="Servicio_Recision" Member="Servicio" ThisKey="id_servicio" OtherKey="id_servicio" Type="Servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Repuesto" Member="Repuesto">
+    <Type Name="Repuesto">
+      <Column Name="id_respuesto" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_repuesto" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="costo_repuesto" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_repuesto" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Repuesto_repuesto_falla" Member="repuesto_falla" ThisKey="id_respuesto" OtherKey="id_respuesto" Type="repuesto_falla" />
+    </Type>
+  </Table>
+  <Table Name="dbo.repuesto_falla" Member="repuesto_falla">
+    <Type Name="repuesto_falla">
+      <Column Name="id_repuesto_falla" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_respuesto" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="costo_repuesto_falla" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_repuesto_falla" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Falla_repuesto_falla" Member="Falla" ThisKey="id_falla" OtherKey="id_falla" Type="Falla" IsForeignKey="true" />
+      <Association Name="Repuesto_repuesto_falla" Member="Repuesto" ThisKey="id_respuesto" OtherKey="id_respuesto" Type="Repuesto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicio" Member="Servicio">
+    <Type Name="Servicio">
+      <Column Name="id_contrato" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="saldo_pendiente" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipo_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_instalacion_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Servicio_Corte_servicio" Member="Corte_servicio" ThisKey="id_servicio" OtherKey="id_servicio" Type="Corte_servicio" />
+      <Association Name="Servicio_Cuota" Member="Cuota" ThisKey="id_servicio" OtherKey="id_servicio" Type="Cuota" />
+      <Association Name="Servicio_Pago" Member="Pago" ThisKey="id_servicio" OtherKey="id_servicio" Type="Pago" />
+      <Association Name="Servicio_Recision" Member="Recision" ThisKey="id_servicio" OtherKey="id_servicio" Type="Recision" />
+      <Association Name="Contrato_Servicio" Member="Contrato" ThisKey="id_contrato" OtherKey="id_contrato" Type="Contrato" IsForeignKey="true" />
+      <Association Name="Instalacion_servicio_Servicio" Member="Instalacion_servicio" ThisKey="id_instalacion_servicio" OtherKey="id_instalacion_servicio" Type="Instalacion_servicio" IsForeignKey="true" />
+      <Association Name="Tipo_servicio_Servicio" Member="Tipo_servicio" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Tipo_servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tecnico" Member="Tecnico">
+    <Type Name="Tecnico">
+      <Column Name="id_tecnico" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_tecnico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_tecnico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nit_tecnico" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="dpi_tecnico" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_nacimiento_tecnico" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_contrato_tecnico" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_despido_tecnico" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Tecnico_Peloton" Member="Peloton" ThisKey="id_tecnico" OtherKey="id_tecnico" Type="Peloton" />
+      <Association Name="Usuario_Tecnico" Member="Usuario" ThisKey="id_usuario" OtherKey="id_usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_corte" Member="Tipo_corte">
+    <Type Name="Tipo_corte">
+      <Column Name="id_tipo_corte" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_tipo_corte" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_corte_Corte_servicio" Member="Corte_servicio" ThisKey="id_tipo_corte" OtherKey="id_tipo_corte" Type="Corte_servicio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_falla" Member="Tipo_falla">
+    <Type Name="Tipo_falla">
+      <Column Name="id_tipo_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_falla" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_falla_Falla" Member="Falla" ThisKey="id_tipo_falla" OtherKey="id_tipo_falla" Type="Falla" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_pago" Member="Tipo_pago">
+    <Type Name="Tipo_pago">
+      <Column Name="id_tipo_pago" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_tipo_pago" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_pago_Pago" Member="Pago" ThisKey="id_tipo_pago" OtherKey="id_tipo_pago" Type="Pago" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_servicio" Member="Tipo_servicio">
+    <Type Name="Tipo_servicio">
+      <Column Name="id_tipo_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_tipo_servicio" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_categoria_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_servicio_Falla" Member="Falla" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Falla" />
+      <Association Name="Tipo_servicio_Servicio" Member="Servicio" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Servicio" />
+      <Association Name="Categoria_servicio_Tipo_servicio" Member="Categoria_servicio" ThisKey="id_categoria_servicio" OtherKey="id_categoria_servicio" Type="Categoria_servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_usuario" Member="Tipo_usuario">
+    <Type Name="Tipo_usuario">
+      <Column Name="id_tipo_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_tipo_usuario" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_usuario_Usuario" Member="Usuario" ThisKey="id_tipo_usuario" OtherKey="id_tipo_usuario" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="id_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipo_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_estado_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Usuario_Admin" Member="Admin" ThisKey="id_usuario" OtherKey="id_usuario" Type="Admin" />
+      <Association Name="Usuario_Cajero" Member="Cajero" ThisKey="id_usuario" OtherKey="id_usuario" Type="Cajero" />
+      <Association Name="Usuario_Contrato" Member="Contrato" ThisKey="id_usuario" OtherKey="id_usuario" Type="Contrato" />
+      <Association Name="Usuario_Tecnico" Member="Tecnico" ThisKey="id_usuario" OtherKey="id_usuario" Type="Tecnico" />
+      <Association Name="Estado_usuario_Usuario" Member="Estado_usuario" ThisKey="id_estado_usuario" OtherKey="id_estado_usuario" Type="Estado_usuario" IsForeignKey="true" />
+      <Association Name="Tipo_usuario_Usuario" Member="Tipo_usuario" ThisKey="id_tipo_usuario" OtherKey="id_tipo_usuario" Type="Tipo_usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Velocidad_internet" Member="Velocidad_internet">
+    <Type Name="Velocidad_internet">
+      <Column Name="id_velocidad_internet" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="velocidad_subida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="velocidad_descarga" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Velocidad_internet_Categoria_servicio" Member="Categoria_servicio" ThisKey="id_velocidad_internet" OtherKey="id_velocidad_internet" Type="Categoria_servicio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visita_tecnica" Member="Visita_tecnica">
+    <Type Name="Visita_tecnica">
+      <Column Name="id_visita_tecnica" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_contrato" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_peloton" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_solicitud" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_ejecucion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Visita_tecnica_Bitacora" Member="Bitacora" ThisKey="id_visita_tecnica" OtherKey="id_visita_tecnica" Type="Bitacora" />
+      <Association Name="Visita_tecnica_Falla" Member="Falla" ThisKey="id_visita_tecnica" OtherKey="id_visita_tecnica" Type="Falla" />
+      <Association Name="Contrato_Visita_tecnica" Member="Contrato" ThisKey="id_contrato" OtherKey="id_contrato" Type="Contrato" IsForeignKey="true" />
+      <Association Name="Peloton_Visita_tecnica" Member="Peloton" ThisKey="id_peloton" OtherKey="id_peloton" Type="Peloton" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

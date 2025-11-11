@@ -63,9 +63,49 @@ namespace ExamenFinalBD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Imagen_de_WhatsApp_2025_11_07_a_las_11_11_30_2310c900 {
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_08T21_44_27_576Z {
             get {
-                object obj = ResourceManager.GetObject("Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900", resourceCulture);
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-08T21_44_27.576Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_08T21_44_30_370Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-08T21_44_30.370Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_08T21_44_32_054Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-08T21_44_32.054Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_08T21_44_35_043Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-08T21_44_35.043Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap morado {
+            get {
+                object obj = ResourceManager.GetObject("morado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
