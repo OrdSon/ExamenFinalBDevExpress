@@ -183,12 +183,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tecnico\BD\Linq.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Linq.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Tecnico\BLL\General.cs" />
     <Compile Include="Tecnico\BuscaContrato.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tecnico\BuscaContrato.Designer.cs">
       <DependentUpon>BuscaContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnico\BuscarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\BuscarRepuesto.Designer.cs">
+      <DependentUpon>BuscarRepuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Tecnico\CreaReportes.cs">
       <SubType>Form</SubType>
@@ -223,6 +234,9 @@
     <EmbeddedResource Include="Tecnico\BuscaContrato.resx">
       <DependentUpon>BuscaContrato.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tecnico\BuscarRepuesto.resx">
+      <DependentUpon>BuscarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tecnico\CreaReportes.resx">
       <DependentUpon>CreaReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +253,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Tecnico\BD\Linq.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Linq.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tecnico\BD\Linq.dbml.layout">
+      <DependentUpon>Linq.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -258,6 +280,8 @@
   <ItemGroup>
     <None Include="Resources\Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
