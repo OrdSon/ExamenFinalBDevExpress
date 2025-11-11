@@ -59,7 +59,9 @@
     <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -91,6 +93,11 @@
     <Compile Include="Cajero.Designer.cs">
       <DependentUpon>Cajero.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\CanalDAO.cs" />
+    <Compile Include="DAO\CategoriaServicioCompletoDAO.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\ContratoDAO.cs" />
+    <Compile Include="DAO\PagoDAO.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +112,22 @@
     <Compile Include="RibbonForm1.Designer.cs">
       <DependentUpon>RibbonForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\General.cs" />
     <Compile Include="Utils\UIUtils.cs" />
+    <Compile Include="NuevoClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoClienteForm.Designer.cs">
+      <DependentUpon>NuevoClienteForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cajero.resx">
       <DependentUpon>Cajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoClienteForm.resx">
+      <DependentUpon>NuevoClienteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,6 +182,13 @@
     <Content Include="Assets\Images\Google_AI_Studio_2025-11-08T21_44_30.370Z.png" />
     <Content Include="Assets\Images\Google_AI_Studio_2025-11-08T21_44_32.054Z.png" />
     <Content Include="Assets\Images\Google_AI_Studio_2025-11-08T21_44_35.043Z.png" />
+    <None Include="Resources\ConectaFacil.jpeg" />
+    <None Include="Resources\Google_AI_Studio_2025-11-09T23_56_17.610Z.png" />
+    <None Include="Resources\Google_AI_Studio_2025-11-09T23_48_52.290Z.png" />
+    <None Include="Resources\Google_AI_Studio_2025-11-09T23_49_05.018Z.png" />
+    <None Include="Resources\Google_AI_Studio_2025-11-09T23_49_14.328Z.png" />
+    <None Include="Resources\Google_AI_Studio_2025-11-09T23_49_28.938Z.png" />
+    <None Include="Resources\Google_AI_Studio_2025-11-09T23_51_00.271Z.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

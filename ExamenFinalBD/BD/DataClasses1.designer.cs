@@ -23,7 +23,7 @@ namespace ExamenFinalBD.BD
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="db_ac0671_final")]
-	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
+	public partial class DBLinQ : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -45,18 +45,12 @@ namespace ExamenFinalBD.BD
     partial void InsertCanal_categoria_servicio(Canal_categoria_servicio instance);
     partial void UpdateCanal_categoria_servicio(Canal_categoria_servicio instance);
     partial void DeleteCanal_categoria_servicio(Canal_categoria_servicio instance);
-    partial void InsertCategoria_servicio(Categoria_servicio instance);
-    partial void UpdateCategoria_servicio(Categoria_servicio instance);
-    partial void DeleteCategoria_servicio(Categoria_servicio instance);
     partial void InsertCliente(Cliente instance);
     partial void UpdateCliente(Cliente instance);
     partial void DeleteCliente(Cliente instance);
     partial void InsertConfiguracion(Configuracion instance);
     partial void UpdateConfiguracion(Configuracion instance);
     partial void DeleteConfiguracion(Configuracion instance);
-    partial void InsertContrato(Contrato instance);
-    partial void UpdateContrato(Contrato instance);
-    partial void DeleteContrato(Contrato instance);
     partial void InsertCorte_servicio(Corte_servicio instance);
     partial void UpdateCorte_servicio(Corte_servicio instance);
     partial void DeleteCorte_servicio(Corte_servicio instance);
@@ -99,9 +93,6 @@ namespace ExamenFinalBD.BD
     partial void InsertMunicipio(Municipio instance);
     partial void UpdateMunicipio(Municipio instance);
     partial void DeleteMunicipio(Municipio instance);
-    partial void InsertPago(Pago instance);
-    partial void UpdatePago(Pago instance);
-    partial void DeletePago(Pago instance);
     partial void InsertPeloton(Peloton instance);
     partial void UpdatePeloton(Peloton instance);
     partial void DeletePeloton(Peloton instance);
@@ -144,27 +135,36 @@ namespace ExamenFinalBD.BD
     partial void InsertVisita_tecnica(Visita_tecnica instance);
     partial void UpdateVisita_tecnica(Visita_tecnica instance);
     partial void DeleteVisita_tecnica(Visita_tecnica instance);
+    partial void InsertCategoria_servicio(Categoria_servicio instance);
+    partial void UpdateCategoria_servicio(Categoria_servicio instance);
+    partial void DeleteCategoria_servicio(Categoria_servicio instance);
+    partial void InsertContrato(Contrato instance);
+    partial void UpdateContrato(Contrato instance);
+    partial void DeleteContrato(Contrato instance);
+    partial void InsertPago(Pago instance);
+    partial void UpdatePago(Pago instance);
+    partial void DeletePago(Pago instance);
     #endregion
 		
-		public DataClasses1DataContext(string connection) : 
+		public DBLinQ(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
+		public DBLinQ(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DBLinQ(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DBLinQ(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -210,14 +210,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		public System.Data.Linq.Table<Categoria_servicio> Categoria_servicio
-		{
-			get
-			{
-				return this.GetTable<Categoria_servicio>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Cliente> Cliente
 		{
 			get
@@ -231,14 +223,6 @@ namespace ExamenFinalBD.BD
 			get
 			{
 				return this.GetTable<Configuracion>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Contrato> Contrato
-		{
-			get
-			{
-				return this.GetTable<Contrato>();
 			}
 		}
 		
@@ -354,14 +338,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		public System.Data.Linq.Table<Pago> Pago
-		{
-			get
-			{
-				return this.GetTable<Pago>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Peloton> Peloton
 		{
 			get
@@ -471,6 +447,30 @@ namespace ExamenFinalBD.BD
 			get
 			{
 				return this.GetTable<Visita_tecnica>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Categoria_servicio> Categoria_servicio
+		{
+			get
+			{
+				return this.GetTable<Categoria_servicio>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Contrato> Contrato
+		{
+			get
+			{
+				return this.GetTable<Contrato>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Pago> Pago
+		{
+			get
+			{
+				return this.GetTable<Pago>();
 			}
 		}
 	}
@@ -1680,278 +1680,6 @@ namespace ExamenFinalBD.BD
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categoria_servicio")]
-	public partial class Categoria_servicio : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id_categoria_servicio;
-		
-		private string _id_disponibilidad_telefono;
-		
-		private string _id_velocidad_internet;
-		
-		private string _nombre_categoria_servicio;
-		
-		private EntitySet<Canal_categoria_servicio> _Canal_categoria_servicio;
-		
-		private EntitySet<Tipo_servicio> _Tipo_servicio;
-		
-		private EntityRef<Disponibilidad_telefono> _Disponibilidad_telefono;
-		
-		private EntityRef<Velocidad_internet> _Velocidad_internet;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_categoria_servicioChanging(string value);
-    partial void Onid_categoria_servicioChanged();
-    partial void Onid_disponibilidad_telefonoChanging(string value);
-    partial void Onid_disponibilidad_telefonoChanged();
-    partial void Onid_velocidad_internetChanging(string value);
-    partial void Onid_velocidad_internetChanged();
-    partial void Onnombre_categoria_servicioChanging(string value);
-    partial void Onnombre_categoria_servicioChanged();
-    #endregion
-		
-		public Categoria_servicio()
-		{
-			this._Canal_categoria_servicio = new EntitySet<Canal_categoria_servicio>(new Action<Canal_categoria_servicio>(this.attach_Canal_categoria_servicio), new Action<Canal_categoria_servicio>(this.detach_Canal_categoria_servicio));
-			this._Tipo_servicio = new EntitySet<Tipo_servicio>(new Action<Tipo_servicio>(this.attach_Tipo_servicio), new Action<Tipo_servicio>(this.detach_Tipo_servicio));
-			this._Disponibilidad_telefono = default(EntityRef<Disponibilidad_telefono>);
-			this._Velocidad_internet = default(EntityRef<Velocidad_internet>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_categoria_servicio", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_categoria_servicio
-		{
-			get
-			{
-				return this._id_categoria_servicio;
-			}
-			set
-			{
-				if ((this._id_categoria_servicio != value))
-				{
-					this.Onid_categoria_servicioChanging(value);
-					this.SendPropertyChanging();
-					this._id_categoria_servicio = value;
-					this.SendPropertyChanged("id_categoria_servicio");
-					this.Onid_categoria_servicioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_disponibilidad_telefono", DbType="NVarChar(10)")]
-		public string id_disponibilidad_telefono
-		{
-			get
-			{
-				return this._id_disponibilidad_telefono;
-			}
-			set
-			{
-				if ((this._id_disponibilidad_telefono != value))
-				{
-					if (this._Disponibilidad_telefono.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_disponibilidad_telefonoChanging(value);
-					this.SendPropertyChanging();
-					this._id_disponibilidad_telefono = value;
-					this.SendPropertyChanged("id_disponibilidad_telefono");
-					this.Onid_disponibilidad_telefonoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_velocidad_internet", DbType="NVarChar(6)")]
-		public string id_velocidad_internet
-		{
-			get
-			{
-				return this._id_velocidad_internet;
-			}
-			set
-			{
-				if ((this._id_velocidad_internet != value))
-				{
-					if (this._Velocidad_internet.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_velocidad_internetChanging(value);
-					this.SendPropertyChanging();
-					this._id_velocidad_internet = value;
-					this.SendPropertyChanged("id_velocidad_internet");
-					this.Onid_velocidad_internetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_categoria_servicio", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string nombre_categoria_servicio
-		{
-			get
-			{
-				return this._nombre_categoria_servicio;
-			}
-			set
-			{
-				if ((this._nombre_categoria_servicio != value))
-				{
-					this.Onnombre_categoria_servicioChanging(value);
-					this.SendPropertyChanging();
-					this._nombre_categoria_servicio = value;
-					this.SendPropertyChanged("nombre_categoria_servicio");
-					this.Onnombre_categoria_servicioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_servicio_Canal_categoria_servicio", Storage="_Canal_categoria_servicio", ThisKey="id_categoria_servicio", OtherKey="id_categoria_servicio")]
-		public EntitySet<Canal_categoria_servicio> Canal_categoria_servicio
-		{
-			get
-			{
-				return this._Canal_categoria_servicio;
-			}
-			set
-			{
-				this._Canal_categoria_servicio.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_servicio_Tipo_servicio", Storage="_Tipo_servicio", ThisKey="id_categoria_servicio", OtherKey="id_categoria_servicio")]
-		public EntitySet<Tipo_servicio> Tipo_servicio
-		{
-			get
-			{
-				return this._Tipo_servicio;
-			}
-			set
-			{
-				this._Tipo_servicio.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Disponibilidad_telefono_Categoria_servicio", Storage="_Disponibilidad_telefono", ThisKey="id_disponibilidad_telefono", OtherKey="id_disponibilidad_telefono", IsForeignKey=true)]
-		public Disponibilidad_telefono Disponibilidad_telefono
-		{
-			get
-			{
-				return this._Disponibilidad_telefono.Entity;
-			}
-			set
-			{
-				Disponibilidad_telefono previousValue = this._Disponibilidad_telefono.Entity;
-				if (((previousValue != value) 
-							|| (this._Disponibilidad_telefono.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Disponibilidad_telefono.Entity = null;
-						previousValue.Categoria_servicio.Remove(this);
-					}
-					this._Disponibilidad_telefono.Entity = value;
-					if ((value != null))
-					{
-						value.Categoria_servicio.Add(this);
-						this._id_disponibilidad_telefono = value.id_disponibilidad_telefono;
-					}
-					else
-					{
-						this._id_disponibilidad_telefono = default(string);
-					}
-					this.SendPropertyChanged("Disponibilidad_telefono");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Velocidad_internet_Categoria_servicio", Storage="_Velocidad_internet", ThisKey="id_velocidad_internet", OtherKey="id_velocidad_internet", IsForeignKey=true)]
-		public Velocidad_internet Velocidad_internet
-		{
-			get
-			{
-				return this._Velocidad_internet.Entity;
-			}
-			set
-			{
-				Velocidad_internet previousValue = this._Velocidad_internet.Entity;
-				if (((previousValue != value) 
-							|| (this._Velocidad_internet.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Velocidad_internet.Entity = null;
-						previousValue.Categoria_servicio.Remove(this);
-					}
-					this._Velocidad_internet.Entity = value;
-					if ((value != null))
-					{
-						value.Categoria_servicio.Add(this);
-						this._id_velocidad_internet = value.id_velocidad_internet;
-					}
-					else
-					{
-						this._id_velocidad_internet = default(string);
-					}
-					this.SendPropertyChanged("Velocidad_internet");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Canal_categoria_servicio(Canal_categoria_servicio entity)
-		{
-			this.SendPropertyChanging();
-			entity.Categoria_servicio = this;
-		}
-		
-		private void detach_Canal_categoria_servicio(Canal_categoria_servicio entity)
-		{
-			this.SendPropertyChanging();
-			entity.Categoria_servicio = null;
-		}
-		
-		private void attach_Tipo_servicio(Tipo_servicio entity)
-		{
-			this.SendPropertyChanging();
-			entity.Categoria_servicio = this;
-		}
-		
-		private void detach_Tipo_servicio(Tipo_servicio entity)
-		{
-			this.SendPropertyChanging();
-			entity.Categoria_servicio = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cliente")]
 	public partial class Cliente : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2269,545 +1997,6 @@ namespace ExamenFinalBD.BD
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Contrato")]
-	public partial class Contrato : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id_contrato;
-		
-		private string _id_info_cobro;
-		
-		private string _id_municipio;
-		
-		private string _id_cliente;
-		
-		private string _fecha_inicio;
-		
-		private System.DateTime _fecha_fin;
-		
-		private string _direccion_instalacion;
-		
-		private decimal _saldo_total;
-		
-		private string _id_estado_contrato;
-		
-		private string _id_usuario;
-		
-		private EntitySet<Servicio> _Servicio;
-		
-		private EntitySet<Visita_tecnica> _Visita_tecnica;
-		
-		private EntityRef<Cliente> _Cliente;
-		
-		private EntityRef<Estado_contrato> _Estado_contrato;
-		
-		private EntityRef<Info_cobro> _Info_cobro;
-		
-		private EntityRef<Municipio> _Municipio;
-		
-		private EntityRef<Usuario> _Usuario;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_contratoChanging(string value);
-    partial void Onid_contratoChanged();
-    partial void Onid_info_cobroChanging(string value);
-    partial void Onid_info_cobroChanged();
-    partial void Onid_municipioChanging(string value);
-    partial void Onid_municipioChanged();
-    partial void Onid_clienteChanging(string value);
-    partial void Onid_clienteChanged();
-    partial void Onfecha_inicioChanging(string value);
-    partial void Onfecha_inicioChanged();
-    partial void Onfecha_finChanging(System.DateTime value);
-    partial void Onfecha_finChanged();
-    partial void Ondireccion_instalacionChanging(string value);
-    partial void Ondireccion_instalacionChanged();
-    partial void Onsaldo_totalChanging(decimal value);
-    partial void Onsaldo_totalChanged();
-    partial void Onid_estado_contratoChanging(string value);
-    partial void Onid_estado_contratoChanged();
-    partial void Onid_usuarioChanging(string value);
-    partial void Onid_usuarioChanged();
-    #endregion
-		
-		public Contrato()
-		{
-			this._Servicio = new EntitySet<Servicio>(new Action<Servicio>(this.attach_Servicio), new Action<Servicio>(this.detach_Servicio));
-			this._Visita_tecnica = new EntitySet<Visita_tecnica>(new Action<Visita_tecnica>(this.attach_Visita_tecnica), new Action<Visita_tecnica>(this.detach_Visita_tecnica));
-			this._Cliente = default(EntityRef<Cliente>);
-			this._Estado_contrato = default(EntityRef<Estado_contrato>);
-			this._Info_cobro = default(EntityRef<Info_cobro>);
-			this._Municipio = default(EntityRef<Municipio>);
-			this._Usuario = default(EntityRef<Usuario>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_contrato", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_contrato
-		{
-			get
-			{
-				return this._id_contrato;
-			}
-			set
-			{
-				if ((this._id_contrato != value))
-				{
-					this.Onid_contratoChanging(value);
-					this.SendPropertyChanging();
-					this._id_contrato = value;
-					this.SendPropertyChanged("id_contrato");
-					this.Onid_contratoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_info_cobro", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string id_info_cobro
-		{
-			get
-			{
-				return this._id_info_cobro;
-			}
-			set
-			{
-				if ((this._id_info_cobro != value))
-				{
-					if (this._Info_cobro.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_info_cobroChanging(value);
-					this.SendPropertyChanging();
-					this._id_info_cobro = value;
-					this.SendPropertyChanged("id_info_cobro");
-					this.Onid_info_cobroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_municipio", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string id_municipio
-		{
-			get
-			{
-				return this._id_municipio;
-			}
-			set
-			{
-				if ((this._id_municipio != value))
-				{
-					if (this._Municipio.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_municipioChanging(value);
-					this.SendPropertyChanging();
-					this._id_municipio = value;
-					this.SendPropertyChanged("id_municipio");
-					this.Onid_municipioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cliente", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string id_cliente
-		{
-			get
-			{
-				return this._id_cliente;
-			}
-			set
-			{
-				if ((this._id_cliente != value))
-				{
-					if (this._Cliente.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_clienteChanging(value);
-					this.SendPropertyChanging();
-					this._id_cliente = value;
-					this.SendPropertyChanged("id_cliente");
-					this.Onid_clienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_inicio", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string fecha_inicio
-		{
-			get
-			{
-				return this._fecha_inicio;
-			}
-			set
-			{
-				if ((this._fecha_inicio != value))
-				{
-					this.Onfecha_inicioChanging(value);
-					this.SendPropertyChanging();
-					this._fecha_inicio = value;
-					this.SendPropertyChanged("fecha_inicio");
-					this.Onfecha_inicioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_fin", DbType="DateTime NOT NULL")]
-		public System.DateTime fecha_fin
-		{
-			get
-			{
-				return this._fecha_fin;
-			}
-			set
-			{
-				if ((this._fecha_fin != value))
-				{
-					this.Onfecha_finChanging(value);
-					this.SendPropertyChanging();
-					this._fecha_fin = value;
-					this.SendPropertyChanged("fecha_fin");
-					this.Onfecha_finChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_instalacion", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string direccion_instalacion
-		{
-			get
-			{
-				return this._direccion_instalacion;
-			}
-			set
-			{
-				if ((this._direccion_instalacion != value))
-				{
-					this.Ondireccion_instalacionChanging(value);
-					this.SendPropertyChanging();
-					this._direccion_instalacion = value;
-					this.SendPropertyChanged("direccion_instalacion");
-					this.Ondireccion_instalacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_saldo_total", DbType="Decimal(8,2) NOT NULL")]
-		public decimal saldo_total
-		{
-			get
-			{
-				return this._saldo_total;
-			}
-			set
-			{
-				if ((this._saldo_total != value))
-				{
-					this.Onsaldo_totalChanging(value);
-					this.SendPropertyChanging();
-					this._saldo_total = value;
-					this.SendPropertyChanged("saldo_total");
-					this.Onsaldo_totalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estado_contrato", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string id_estado_contrato
-		{
-			get
-			{
-				return this._id_estado_contrato;
-			}
-			set
-			{
-				if ((this._id_estado_contrato != value))
-				{
-					if (this._Estado_contrato.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_estado_contratoChanging(value);
-					this.SendPropertyChanging();
-					this._id_estado_contrato = value;
-					this.SendPropertyChanged("id_estado_contrato");
-					this.Onid_estado_contratoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_usuario", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string id_usuario
-		{
-			get
-			{
-				return this._id_usuario;
-			}
-			set
-			{
-				if ((this._id_usuario != value))
-				{
-					if (this._Usuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_usuarioChanging(value);
-					this.SendPropertyChanging();
-					this._id_usuario = value;
-					this.SendPropertyChanged("id_usuario");
-					this.Onid_usuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Servicio", Storage="_Servicio", ThisKey="id_contrato", OtherKey="id_contrato")]
-		public EntitySet<Servicio> Servicio
-		{
-			get
-			{
-				return this._Servicio;
-			}
-			set
-			{
-				this._Servicio.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Visita_tecnica", Storage="_Visita_tecnica", ThisKey="id_contrato", OtherKey="id_contrato")]
-		public EntitySet<Visita_tecnica> Visita_tecnica
-		{
-			get
-			{
-				return this._Visita_tecnica;
-			}
-			set
-			{
-				this._Visita_tecnica.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Contrato", Storage="_Cliente", ThisKey="id_cliente", OtherKey="id_cliente", IsForeignKey=true)]
-		public Cliente Cliente
-		{
-			get
-			{
-				return this._Cliente.Entity;
-			}
-			set
-			{
-				Cliente previousValue = this._Cliente.Entity;
-				if (((previousValue != value) 
-							|| (this._Cliente.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cliente.Entity = null;
-						previousValue.Contrato.Remove(this);
-					}
-					this._Cliente.Entity = value;
-					if ((value != null))
-					{
-						value.Contrato.Add(this);
-						this._id_cliente = value.id_cliente;
-					}
-					else
-					{
-						this._id_cliente = default(string);
-					}
-					this.SendPropertyChanged("Cliente");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Estado_contrato_Contrato", Storage="_Estado_contrato", ThisKey="id_estado_contrato", OtherKey="id_estado_contrato", IsForeignKey=true)]
-		public Estado_contrato Estado_contrato
-		{
-			get
-			{
-				return this._Estado_contrato.Entity;
-			}
-			set
-			{
-				Estado_contrato previousValue = this._Estado_contrato.Entity;
-				if (((previousValue != value) 
-							|| (this._Estado_contrato.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Estado_contrato.Entity = null;
-						previousValue.Contrato.Remove(this);
-					}
-					this._Estado_contrato.Entity = value;
-					if ((value != null))
-					{
-						value.Contrato.Add(this);
-						this._id_estado_contrato = value.id_estado_contrato;
-					}
-					else
-					{
-						this._id_estado_contrato = default(string);
-					}
-					this.SendPropertyChanged("Estado_contrato");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Info_cobro_Contrato", Storage="_Info_cobro", ThisKey="id_info_cobro", OtherKey="id_info_cobro", IsForeignKey=true)]
-		public Info_cobro Info_cobro
-		{
-			get
-			{
-				return this._Info_cobro.Entity;
-			}
-			set
-			{
-				Info_cobro previousValue = this._Info_cobro.Entity;
-				if (((previousValue != value) 
-							|| (this._Info_cobro.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Info_cobro.Entity = null;
-						previousValue.Contrato.Remove(this);
-					}
-					this._Info_cobro.Entity = value;
-					if ((value != null))
-					{
-						value.Contrato.Add(this);
-						this._id_info_cobro = value.id_info_cobro;
-					}
-					else
-					{
-						this._id_info_cobro = default(string);
-					}
-					this.SendPropertyChanged("Info_cobro");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Municipio_Contrato", Storage="_Municipio", ThisKey="id_municipio", OtherKey="id_municipio", IsForeignKey=true)]
-		public Municipio Municipio
-		{
-			get
-			{
-				return this._Municipio.Entity;
-			}
-			set
-			{
-				Municipio previousValue = this._Municipio.Entity;
-				if (((previousValue != value) 
-							|| (this._Municipio.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Municipio.Entity = null;
-						previousValue.Contrato.Remove(this);
-					}
-					this._Municipio.Entity = value;
-					if ((value != null))
-					{
-						value.Contrato.Add(this);
-						this._id_municipio = value.id_municipio;
-					}
-					else
-					{
-						this._id_municipio = default(string);
-					}
-					this.SendPropertyChanged("Municipio");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Contrato", Storage="_Usuario", ThisKey="id_usuario", OtherKey="id_usuario", IsForeignKey=true)]
-		public Usuario Usuario
-		{
-			get
-			{
-				return this._Usuario.Entity;
-			}
-			set
-			{
-				Usuario previousValue = this._Usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Usuario.Entity = null;
-						previousValue.Contrato.Remove(this);
-					}
-					this._Usuario.Entity = value;
-					if ((value != null))
-					{
-						value.Contrato.Add(this);
-						this._id_usuario = value.id_usuario;
-					}
-					else
-					{
-						this._id_usuario = default(string);
-					}
-					this.SendPropertyChanged("Usuario");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Servicio(Servicio entity)
-		{
-			this.SendPropertyChanging();
-			entity.Contrato = this;
-		}
-		
-		private void detach_Servicio(Servicio entity)
-		{
-			this.SendPropertyChanging();
-			entity.Contrato = null;
-		}
-		
-		private void attach_Visita_tecnica(Visita_tecnica entity)
-		{
-			this.SendPropertyChanging();
-			entity.Contrato = this;
-		}
-		
-		private void detach_Visita_tecnica(Visita_tecnica entity)
-		{
-			this.SendPropertyChanging();
-			entity.Contrato = null;
 		}
 	}
 	
@@ -5270,9 +4459,9 @@ namespace ExamenFinalBD.BD
 		
 		private string _id_departamento;
 		
-		private EntitySet<Contrato> _Contrato;
-		
 		private EntitySet<Info_cobro> _Info_cobro;
+		
+		private EntitySet<Contrato> _Contrato;
 		
 		private EntityRef<Departamento> _Departamento;
 		
@@ -5290,8 +4479,8 @@ namespace ExamenFinalBD.BD
 		
 		public Municipio()
 		{
-			this._Contrato = new EntitySet<Contrato>(new Action<Contrato>(this.attach_Contrato), new Action<Contrato>(this.detach_Contrato));
 			this._Info_cobro = new EntitySet<Info_cobro>(new Action<Info_cobro>(this.attach_Info_cobro), new Action<Info_cobro>(this.detach_Info_cobro));
+			this._Contrato = new EntitySet<Contrato>(new Action<Contrato>(this.attach_Contrato), new Action<Contrato>(this.detach_Contrato));
 			this._Departamento = default(EntityRef<Departamento>);
 			OnCreated();
 		}
@@ -5360,19 +4549,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Municipio_Contrato", Storage="_Contrato", ThisKey="id_municipio", OtherKey="id_municipio")]
-		public EntitySet<Contrato> Contrato
-		{
-			get
-			{
-				return this._Contrato;
-			}
-			set
-			{
-				this._Contrato.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Municipio_Info_cobro", Storage="_Info_cobro", ThisKey="id_municipio", OtherKey="id_municipio")]
 		public EntitySet<Info_cobro> Info_cobro
 		{
@@ -5383,6 +4559,19 @@ namespace ExamenFinalBD.BD
 			set
 			{
 				this._Info_cobro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Municipio_Contrato", Storage="_Contrato", ThisKey="id_municipio", OtherKey="id_municipio")]
+		public EntitySet<Contrato> Contrato
+		{
+			get
+			{
+				return this._Contrato;
+			}
+			set
+			{
+				this._Contrato.Assign(value);
 			}
 		}
 		
@@ -5440,18 +4629,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		private void attach_Contrato(Contrato entity)
-		{
-			this.SendPropertyChanging();
-			entity.Municipio = this;
-		}
-		
-		private void detach_Contrato(Contrato entity)
-		{
-			this.SendPropertyChanging();
-			entity.Municipio = null;
-		}
-		
 		private void attach_Info_cobro(Info_cobro entity)
 		{
 			this.SendPropertyChanging();
@@ -5463,338 +4640,17 @@ namespace ExamenFinalBD.BD
 			this.SendPropertyChanging();
 			entity.Municipio = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pago")]
-	public partial class Pago : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id_pago;
-		
-		private decimal _sub_total;
-		
-		private int _cantidad;
-		
-		private string _id_estado_pago;
-		
-		private string _id_tipo_pago;
-		
-		private string _id_servicio;
-		
-		private EntitySet<Factura> _Factura;
-		
-		private EntityRef<Estado_pago> _Estado_pago;
-		
-		private EntityRef<Servicio> _Servicio;
-		
-		private EntityRef<Tipo_pago> _Tipo_pago;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_pagoChanging(string value);
-    partial void Onid_pagoChanged();
-    partial void Onsub_totalChanging(decimal value);
-    partial void Onsub_totalChanged();
-    partial void OncantidadChanging(int value);
-    partial void OncantidadChanged();
-    partial void Onid_estado_pagoChanging(string value);
-    partial void Onid_estado_pagoChanged();
-    partial void Onid_tipo_pagoChanging(string value);
-    partial void Onid_tipo_pagoChanged();
-    partial void Onid_servicioChanging(string value);
-    partial void Onid_servicioChanged();
-    #endregion
-		
-		public Pago()
-		{
-			this._Factura = new EntitySet<Factura>(new Action<Factura>(this.attach_Factura), new Action<Factura>(this.detach_Factura));
-			this._Estado_pago = default(EntityRef<Estado_pago>);
-			this._Servicio = default(EntityRef<Servicio>);
-			this._Tipo_pago = default(EntityRef<Tipo_pago>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pago", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_pago
-		{
-			get
-			{
-				return this._id_pago;
-			}
-			set
-			{
-				if ((this._id_pago != value))
-				{
-					this.Onid_pagoChanging(value);
-					this.SendPropertyChanging();
-					this._id_pago = value;
-					this.SendPropertyChanged("id_pago");
-					this.Onid_pagoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sub_total", DbType="Decimal(7,2) NOT NULL")]
-		public decimal sub_total
-		{
-			get
-			{
-				return this._sub_total;
-			}
-			set
-			{
-				if ((this._sub_total != value))
-				{
-					this.Onsub_totalChanging(value);
-					this.SendPropertyChanging();
-					this._sub_total = value;
-					this.SendPropertyChanged("sub_total");
-					this.Onsub_totalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Int NOT NULL")]
-		public int cantidad
-		{
-			get
-			{
-				return this._cantidad;
-			}
-			set
-			{
-				if ((this._cantidad != value))
-				{
-					this.OncantidadChanging(value);
-					this.SendPropertyChanging();
-					this._cantidad = value;
-					this.SendPropertyChanged("cantidad");
-					this.OncantidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estado_pago", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string id_estado_pago
-		{
-			get
-			{
-				return this._id_estado_pago;
-			}
-			set
-			{
-				if ((this._id_estado_pago != value))
-				{
-					if (this._Estado_pago.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_estado_pagoChanging(value);
-					this.SendPropertyChanging();
-					this._id_estado_pago = value;
-					this.SendPropertyChanged("id_estado_pago");
-					this.Onid_estado_pagoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipo_pago", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string id_tipo_pago
-		{
-			get
-			{
-				return this._id_tipo_pago;
-			}
-			set
-			{
-				if ((this._id_tipo_pago != value))
-				{
-					if (this._Tipo_pago.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_tipo_pagoChanging(value);
-					this.SendPropertyChanging();
-					this._id_tipo_pago = value;
-					this.SendPropertyChanged("id_tipo_pago");
-					this.Onid_tipo_pagoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_servicio", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
-		public string id_servicio
-		{
-			get
-			{
-				return this._id_servicio;
-			}
-			set
-			{
-				if ((this._id_servicio != value))
-				{
-					if (this._Servicio.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_servicioChanging(value);
-					this.SendPropertyChanging();
-					this._id_servicio = value;
-					this.SendPropertyChanged("id_servicio");
-					this.Onid_servicioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pago_Factura", Storage="_Factura", ThisKey="id_pago", OtherKey="id_pago")]
-		public EntitySet<Factura> Factura
-		{
-			get
-			{
-				return this._Factura;
-			}
-			set
-			{
-				this._Factura.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Estado_pago_Pago", Storage="_Estado_pago", ThisKey="id_estado_pago", OtherKey="id_estado_pago", IsForeignKey=true)]
-		public Estado_pago Estado_pago
-		{
-			get
-			{
-				return this._Estado_pago.Entity;
-			}
-			set
-			{
-				Estado_pago previousValue = this._Estado_pago.Entity;
-				if (((previousValue != value) 
-							|| (this._Estado_pago.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Estado_pago.Entity = null;
-						previousValue.Pago.Remove(this);
-					}
-					this._Estado_pago.Entity = value;
-					if ((value != null))
-					{
-						value.Pago.Add(this);
-						this._id_estado_pago = value.id_estado_pago;
-					}
-					else
-					{
-						this._id_estado_pago = default(string);
-					}
-					this.SendPropertyChanged("Estado_pago");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Servicio_Pago", Storage="_Servicio", ThisKey="id_servicio", OtherKey="id_servicio", IsForeignKey=true)]
-		public Servicio Servicio
-		{
-			get
-			{
-				return this._Servicio.Entity;
-			}
-			set
-			{
-				Servicio previousValue = this._Servicio.Entity;
-				if (((previousValue != value) 
-							|| (this._Servicio.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Servicio.Entity = null;
-						previousValue.Pago.Remove(this);
-					}
-					this._Servicio.Entity = value;
-					if ((value != null))
-					{
-						value.Pago.Add(this);
-						this._id_servicio = value.id_servicio;
-					}
-					else
-					{
-						this._id_servicio = default(string);
-					}
-					this.SendPropertyChanged("Servicio");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tipo_pago_Pago", Storage="_Tipo_pago", ThisKey="id_tipo_pago", OtherKey="id_tipo_pago", IsForeignKey=true)]
-		public Tipo_pago Tipo_pago
-		{
-			get
-			{
-				return this._Tipo_pago.Entity;
-			}
-			set
-			{
-				Tipo_pago previousValue = this._Tipo_pago.Entity;
-				if (((previousValue != value) 
-							|| (this._Tipo_pago.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tipo_pago.Entity = null;
-						previousValue.Pago.Remove(this);
-					}
-					this._Tipo_pago.Entity = value;
-					if ((value != null))
-					{
-						value.Pago.Add(this);
-						this._id_tipo_pago = value.id_tipo_pago;
-					}
-					else
-					{
-						this._id_tipo_pago = default(string);
-					}
-					this.SendPropertyChanged("Tipo_pago");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Factura(Factura entity)
+		private void attach_Contrato(Contrato entity)
 		{
 			this.SendPropertyChanging();
-			entity.Pago = this;
+			entity.Municipio = this;
 		}
 		
-		private void detach_Factura(Factura entity)
+		private void detach_Contrato(Contrato entity)
 		{
 			this.SendPropertyChanging();
-			entity.Pago = null;
+			entity.Municipio = null;
 		}
 	}
 	
@@ -6671,15 +5527,15 @@ namespace ExamenFinalBD.BD
 		
 		private EntitySet<Cuota> _Cuota;
 		
-		private EntitySet<Pago> _Pago;
-		
 		private EntitySet<Recision> _Recision;
 		
-		private EntityRef<Contrato> _Contrato;
+		private EntitySet<Pago> _Pago;
 		
 		private EntityRef<Instalacion_servicio> _Instalacion_servicio;
 		
 		private EntityRef<Tipo_servicio> _Tipo_servicio;
+		
+		private EntityRef<Contrato> _Contrato;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -6701,11 +5557,11 @@ namespace ExamenFinalBD.BD
 		{
 			this._Corte_servicio = new EntitySet<Corte_servicio>(new Action<Corte_servicio>(this.attach_Corte_servicio), new Action<Corte_servicio>(this.detach_Corte_servicio));
 			this._Cuota = new EntitySet<Cuota>(new Action<Cuota>(this.attach_Cuota), new Action<Cuota>(this.detach_Cuota));
-			this._Pago = new EntitySet<Pago>(new Action<Pago>(this.attach_Pago), new Action<Pago>(this.detach_Pago));
 			this._Recision = new EntitySet<Recision>(new Action<Recision>(this.attach_Recision), new Action<Recision>(this.detach_Recision));
-			this._Contrato = default(EntityRef<Contrato>);
+			this._Pago = new EntitySet<Pago>(new Action<Pago>(this.attach_Pago), new Action<Pago>(this.detach_Pago));
 			this._Instalacion_servicio = default(EntityRef<Instalacion_servicio>);
 			this._Tipo_servicio = default(EntityRef<Tipo_servicio>);
+			this._Contrato = default(EntityRef<Contrato>);
 			OnCreated();
 		}
 		
@@ -6847,19 +5703,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Servicio_Pago", Storage="_Pago", ThisKey="id_servicio", OtherKey="id_servicio")]
-		public EntitySet<Pago> Pago
-		{
-			get
-			{
-				return this._Pago;
-			}
-			set
-			{
-				this._Pago.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Servicio_Recision", Storage="_Recision", ThisKey="id_servicio", OtherKey="id_servicio")]
 		public EntitySet<Recision> Recision
 		{
@@ -6873,37 +5716,16 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Servicio", Storage="_Contrato", ThisKey="id_contrato", OtherKey="id_contrato", IsForeignKey=true)]
-		public Contrato Contrato
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Servicio_Pago", Storage="_Pago", ThisKey="id_servicio", OtherKey="id_servicio")]
+		public EntitySet<Pago> Pago
 		{
 			get
 			{
-				return this._Contrato.Entity;
+				return this._Pago;
 			}
 			set
 			{
-				Contrato previousValue = this._Contrato.Entity;
-				if (((previousValue != value) 
-							|| (this._Contrato.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Contrato.Entity = null;
-						previousValue.Servicio.Remove(this);
-					}
-					this._Contrato.Entity = value;
-					if ((value != null))
-					{
-						value.Servicio.Add(this);
-						this._id_contrato = value.id_contrato;
-					}
-					else
-					{
-						this._id_contrato = default(string);
-					}
-					this.SendPropertyChanged("Contrato");
-				}
+				this._Pago.Assign(value);
 			}
 		}
 		
@@ -6975,6 +5797,40 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Servicio", Storage="_Contrato", ThisKey="id_contrato", OtherKey="id_contrato", IsForeignKey=true)]
+		public Contrato Contrato
+		{
+			get
+			{
+				return this._Contrato.Entity;
+			}
+			set
+			{
+				Contrato previousValue = this._Contrato.Entity;
+				if (((previousValue != value) 
+							|| (this._Contrato.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Contrato.Entity = null;
+						previousValue.Servicio.Remove(this);
+					}
+					this._Contrato.Entity = value;
+					if ((value != null))
+					{
+						value.Servicio.Add(this);
+						this._id_contrato = value.id_contrato;
+					}
+					else
+					{
+						this._id_contrato = default(string);
+					}
+					this.SendPropertyChanged("Contrato");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -7019,18 +5875,6 @@ namespace ExamenFinalBD.BD
 			entity.Servicio = null;
 		}
 		
-		private void attach_Pago(Pago entity)
-		{
-			this.SendPropertyChanging();
-			entity.Servicio = this;
-		}
-		
-		private void detach_Pago(Pago entity)
-		{
-			this.SendPropertyChanging();
-			entity.Servicio = null;
-		}
-		
 		private void attach_Recision(Recision entity)
 		{
 			this.SendPropertyChanging();
@@ -7038,6 +5882,18 @@ namespace ExamenFinalBD.BD
 		}
 		
 		private void detach_Recision(Recision entity)
+		{
+			this.SendPropertyChanging();
+			entity.Servicio = null;
+		}
+		
+		private void attach_Pago(Pago entity)
+		{
+			this.SendPropertyChanging();
+			entity.Servicio = this;
+		}
+		
+		private void detach_Pago(Pago entity)
 		{
 			this.SendPropertyChanging();
 			entity.Servicio = null;
@@ -8098,9 +6954,9 @@ namespace ExamenFinalBD.BD
 		
 		private EntitySet<Cajero> _Cajero;
 		
-		private EntitySet<Contrato> _Contrato;
-		
 		private EntitySet<Tecnico> _Tecnico;
+		
+		private EntitySet<Contrato> _Contrato;
 		
 		private EntityRef<Estado_usuario> _Estado_usuario;
 		
@@ -8126,8 +6982,8 @@ namespace ExamenFinalBD.BD
 		{
 			this._Admin = new EntitySet<Admin>(new Action<Admin>(this.attach_Admin), new Action<Admin>(this.detach_Admin));
 			this._Cajero = new EntitySet<Cajero>(new Action<Cajero>(this.attach_Cajero), new Action<Cajero>(this.detach_Cajero));
-			this._Contrato = new EntitySet<Contrato>(new Action<Contrato>(this.attach_Contrato), new Action<Contrato>(this.detach_Contrato));
 			this._Tecnico = new EntitySet<Tecnico>(new Action<Tecnico>(this.attach_Tecnico), new Action<Tecnico>(this.detach_Tecnico));
+			this._Contrato = new EntitySet<Contrato>(new Action<Contrato>(this.attach_Contrato), new Action<Contrato>(this.detach_Contrato));
 			this._Estado_usuario = default(EntityRef<Estado_usuario>);
 			this._Tipo_usuario = default(EntityRef<Tipo_usuario>);
 			OnCreated();
@@ -8267,19 +7123,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Contrato", Storage="_Contrato", ThisKey="id_usuario", OtherKey="id_usuario")]
-		public EntitySet<Contrato> Contrato
-		{
-			get
-			{
-				return this._Contrato;
-			}
-			set
-			{
-				this._Contrato.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Tecnico", Storage="_Tecnico", ThisKey="id_usuario", OtherKey="id_usuario")]
 		public EntitySet<Tecnico> Tecnico
 		{
@@ -8290,6 +7133,19 @@ namespace ExamenFinalBD.BD
 			set
 			{
 				this._Tecnico.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Contrato", Storage="_Contrato", ThisKey="id_usuario", OtherKey="id_usuario")]
+		public EntitySet<Contrato> Contrato
+		{
+			get
+			{
+				return this._Contrato;
+			}
+			set
+			{
+				this._Contrato.Assign(value);
 			}
 		}
 		
@@ -8405,18 +7261,6 @@ namespace ExamenFinalBD.BD
 			entity.Usuario = null;
 		}
 		
-		private void attach_Contrato(Contrato entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_Contrato(Contrato entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
-		}
-		
 		private void attach_Tecnico(Tecnico entity)
 		{
 			this.SendPropertyChanging();
@@ -8424,6 +7268,18 @@ namespace ExamenFinalBD.BD
 		}
 		
 		private void detach_Tecnico(Tecnico entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = null;
+		}
+		
+		private void attach_Contrato(Contrato entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = this;
+		}
+		
+		private void detach_Contrato(Contrato entity)
 		{
 			this.SendPropertyChanging();
 			entity.Usuario = null;
@@ -8588,9 +7444,9 @@ namespace ExamenFinalBD.BD
 		
 		private EntitySet<Falla> _Falla;
 		
-		private EntityRef<Contrato> _Contrato;
-		
 		private EntityRef<Peloton> _Peloton;
+		
+		private EntityRef<Contrato> _Contrato;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -8612,8 +7468,8 @@ namespace ExamenFinalBD.BD
 		{
 			this._Bitacora = new EntitySet<Bitacora>(new Action<Bitacora>(this.attach_Bitacora), new Action<Bitacora>(this.detach_Bitacora));
 			this._Falla = new EntitySet<Falla>(new Action<Falla>(this.attach_Falla), new Action<Falla>(this.detach_Falla));
-			this._Contrato = default(EntityRef<Contrato>);
 			this._Peloton = default(EntityRef<Peloton>);
+			this._Contrato = default(EntityRef<Contrato>);
 			OnCreated();
 		}
 		
@@ -8751,40 +7607,6 @@ namespace ExamenFinalBD.BD
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Visita_tecnica", Storage="_Contrato", ThisKey="id_contrato", OtherKey="id_contrato", IsForeignKey=true)]
-		public Contrato Contrato
-		{
-			get
-			{
-				return this._Contrato.Entity;
-			}
-			set
-			{
-				Contrato previousValue = this._Contrato.Entity;
-				if (((previousValue != value) 
-							|| (this._Contrato.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Contrato.Entity = null;
-						previousValue.Visita_tecnica.Remove(this);
-					}
-					this._Contrato.Entity = value;
-					if ((value != null))
-					{
-						value.Visita_tecnica.Add(this);
-						this._id_contrato = value.id_contrato;
-					}
-					else
-					{
-						this._id_contrato = default(string);
-					}
-					this.SendPropertyChanged("Contrato");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Peloton_Visita_tecnica", Storage="_Peloton", ThisKey="id_peloton", OtherKey="id_peloton", IsForeignKey=true)]
 		public Peloton Peloton
 		{
@@ -8815,6 +7637,40 @@ namespace ExamenFinalBD.BD
 						this._id_peloton = default(string);
 					}
 					this.SendPropertyChanged("Peloton");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Visita_tecnica", Storage="_Contrato", ThisKey="id_contrato", OtherKey="id_contrato", IsForeignKey=true)]
+		public Contrato Contrato
+		{
+			get
+			{
+				return this._Contrato.Entity;
+			}
+			set
+			{
+				Contrato previousValue = this._Contrato.Entity;
+				if (((previousValue != value) 
+							|| (this._Contrato.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Contrato.Entity = null;
+						previousValue.Visita_tecnica.Remove(this);
+					}
+					this._Contrato.Entity = value;
+					if ((value != null))
+					{
+						value.Visita_tecnica.Add(this);
+						this._id_contrato = value.id_contrato;
+					}
+					else
+					{
+						this._id_contrato = default(string);
+					}
+					this.SendPropertyChanged("Contrato");
 				}
 			}
 		}
@@ -8861,6 +7717,1246 @@ namespace ExamenFinalBD.BD
 		{
 			this.SendPropertyChanging();
 			entity.Visita_tecnica = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categoria_servicio")]
+	public partial class Categoria_servicio : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _id_categoria_servicio;
+		
+		private string _id_disponibilidad_telefono;
+		
+		private string _id_velocidad_internet;
+		
+		private string _nombre_categoria_servicio;
+		
+		private System.Nullable<decimal> _precio;
+		
+		private EntitySet<Canal_categoria_servicio> _Canal_categoria_servicio;
+		
+		private EntitySet<Tipo_servicio> _Tipo_servicio;
+		
+		private EntityRef<Disponibilidad_telefono> _Disponibilidad_telefono;
+		
+		private EntityRef<Velocidad_internet> _Velocidad_internet;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_categoria_servicioChanging(string value);
+    partial void Onid_categoria_servicioChanged();
+    partial void Onid_disponibilidad_telefonoChanging(string value);
+    partial void Onid_disponibilidad_telefonoChanged();
+    partial void Onid_velocidad_internetChanging(string value);
+    partial void Onid_velocidad_internetChanged();
+    partial void Onnombre_categoria_servicioChanging(string value);
+    partial void Onnombre_categoria_servicioChanged();
+    partial void OnprecioChanging(System.Nullable<decimal> value);
+    partial void OnprecioChanged();
+    #endregion
+		
+		public Categoria_servicio()
+		{
+			this._Canal_categoria_servicio = new EntitySet<Canal_categoria_servicio>(new Action<Canal_categoria_servicio>(this.attach_Canal_categoria_servicio), new Action<Canal_categoria_servicio>(this.detach_Canal_categoria_servicio));
+			this._Tipo_servicio = new EntitySet<Tipo_servicio>(new Action<Tipo_servicio>(this.attach_Tipo_servicio), new Action<Tipo_servicio>(this.detach_Tipo_servicio));
+			this._Disponibilidad_telefono = default(EntityRef<Disponibilidad_telefono>);
+			this._Velocidad_internet = default(EntityRef<Velocidad_internet>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_categoria_servicio", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id_categoria_servicio
+		{
+			get
+			{
+				return this._id_categoria_servicio;
+			}
+			set
+			{
+				if ((this._id_categoria_servicio != value))
+				{
+					this.Onid_categoria_servicioChanging(value);
+					this.SendPropertyChanging();
+					this._id_categoria_servicio = value;
+					this.SendPropertyChanged("id_categoria_servicio");
+					this.Onid_categoria_servicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_disponibilidad_telefono", DbType="NVarChar(10)")]
+		public string id_disponibilidad_telefono
+		{
+			get
+			{
+				return this._id_disponibilidad_telefono;
+			}
+			set
+			{
+				if ((this._id_disponibilidad_telefono != value))
+				{
+					if (this._Disponibilidad_telefono.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_disponibilidad_telefonoChanging(value);
+					this.SendPropertyChanging();
+					this._id_disponibilidad_telefono = value;
+					this.SendPropertyChanged("id_disponibilidad_telefono");
+					this.Onid_disponibilidad_telefonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_velocidad_internet", DbType="NVarChar(6)")]
+		public string id_velocidad_internet
+		{
+			get
+			{
+				return this._id_velocidad_internet;
+			}
+			set
+			{
+				if ((this._id_velocidad_internet != value))
+				{
+					if (this._Velocidad_internet.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_velocidad_internetChanging(value);
+					this.SendPropertyChanging();
+					this._id_velocidad_internet = value;
+					this.SendPropertyChanged("id_velocidad_internet");
+					this.Onid_velocidad_internetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_categoria_servicio", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombre_categoria_servicio
+		{
+			get
+			{
+				return this._nombre_categoria_servicio;
+			}
+			set
+			{
+				if ((this._nombre_categoria_servicio != value))
+				{
+					this.Onnombre_categoria_servicioChanging(value);
+					this.SendPropertyChanging();
+					this._nombre_categoria_servicio = value;
+					this.SendPropertyChanged("nombre_categoria_servicio");
+					this.Onnombre_categoria_servicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> precio
+		{
+			get
+			{
+				return this._precio;
+			}
+			set
+			{
+				if ((this._precio != value))
+				{
+					this.OnprecioChanging(value);
+					this.SendPropertyChanging();
+					this._precio = value;
+					this.SendPropertyChanged("precio");
+					this.OnprecioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_servicio_Canal_categoria_servicio", Storage="_Canal_categoria_servicio", ThisKey="id_categoria_servicio", OtherKey="id_categoria_servicio")]
+		public EntitySet<Canal_categoria_servicio> Canal_categoria_servicio
+		{
+			get
+			{
+				return this._Canal_categoria_servicio;
+			}
+			set
+			{
+				this._Canal_categoria_servicio.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_servicio_Tipo_servicio", Storage="_Tipo_servicio", ThisKey="id_categoria_servicio", OtherKey="id_categoria_servicio")]
+		public EntitySet<Tipo_servicio> Tipo_servicio
+		{
+			get
+			{
+				return this._Tipo_servicio;
+			}
+			set
+			{
+				this._Tipo_servicio.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Disponibilidad_telefono_Categoria_servicio", Storage="_Disponibilidad_telefono", ThisKey="id_disponibilidad_telefono", OtherKey="id_disponibilidad_telefono", IsForeignKey=true)]
+		public Disponibilidad_telefono Disponibilidad_telefono
+		{
+			get
+			{
+				return this._Disponibilidad_telefono.Entity;
+			}
+			set
+			{
+				Disponibilidad_telefono previousValue = this._Disponibilidad_telefono.Entity;
+				if (((previousValue != value) 
+							|| (this._Disponibilidad_telefono.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Disponibilidad_telefono.Entity = null;
+						previousValue.Categoria_servicio.Remove(this);
+					}
+					this._Disponibilidad_telefono.Entity = value;
+					if ((value != null))
+					{
+						value.Categoria_servicio.Add(this);
+						this._id_disponibilidad_telefono = value.id_disponibilidad_telefono;
+					}
+					else
+					{
+						this._id_disponibilidad_telefono = default(string);
+					}
+					this.SendPropertyChanged("Disponibilidad_telefono");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Velocidad_internet_Categoria_servicio", Storage="_Velocidad_internet", ThisKey="id_velocidad_internet", OtherKey="id_velocidad_internet", IsForeignKey=true)]
+		public Velocidad_internet Velocidad_internet
+		{
+			get
+			{
+				return this._Velocidad_internet.Entity;
+			}
+			set
+			{
+				Velocidad_internet previousValue = this._Velocidad_internet.Entity;
+				if (((previousValue != value) 
+							|| (this._Velocidad_internet.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Velocidad_internet.Entity = null;
+						previousValue.Categoria_servicio.Remove(this);
+					}
+					this._Velocidad_internet.Entity = value;
+					if ((value != null))
+					{
+						value.Categoria_servicio.Add(this);
+						this._id_velocidad_internet = value.id_velocidad_internet;
+					}
+					else
+					{
+						this._id_velocidad_internet = default(string);
+					}
+					this.SendPropertyChanged("Velocidad_internet");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Canal_categoria_servicio(Canal_categoria_servicio entity)
+		{
+			this.SendPropertyChanging();
+			entity.Categoria_servicio = this;
+		}
+		
+		private void detach_Canal_categoria_servicio(Canal_categoria_servicio entity)
+		{
+			this.SendPropertyChanging();
+			entity.Categoria_servicio = null;
+		}
+		
+		private void attach_Tipo_servicio(Tipo_servicio entity)
+		{
+			this.SendPropertyChanging();
+			entity.Categoria_servicio = this;
+		}
+		
+		private void detach_Tipo_servicio(Tipo_servicio entity)
+		{
+			this.SendPropertyChanging();
+			entity.Categoria_servicio = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Contrato")]
+	public partial class Contrato : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _id_contrato;
+		
+		private string _id_info_cobro;
+		
+		private string _id_municipio;
+		
+		private string _id_cliente;
+		
+		private string _fecha_inicio;
+		
+		private System.DateTime _fecha_fin;
+		
+		private string _direccion_instalacion;
+		
+		private decimal _saldo_total;
+		
+		private string _id_estado_contrato;
+		
+		private string _id_usuario;
+		
+		private System.Nullable<decimal> _monto_cuota;
+		
+		private System.Nullable<int> _meses;
+		
+		private EntitySet<Servicio> _Servicio;
+		
+		private EntitySet<Visita_tecnica> _Visita_tecnica;
+		
+		private EntityRef<Cliente> _Cliente;
+		
+		private EntityRef<Estado_contrato> _Estado_contrato;
+		
+		private EntityRef<Info_cobro> _Info_cobro;
+		
+		private EntityRef<Municipio> _Municipio;
+		
+		private EntityRef<Usuario> _Usuario;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_contratoChanging(string value);
+    partial void Onid_contratoChanged();
+    partial void Onid_info_cobroChanging(string value);
+    partial void Onid_info_cobroChanged();
+    partial void Onid_municipioChanging(string value);
+    partial void Onid_municipioChanged();
+    partial void Onid_clienteChanging(string value);
+    partial void Onid_clienteChanged();
+    partial void Onfecha_inicioChanging(string value);
+    partial void Onfecha_inicioChanged();
+    partial void Onfecha_finChanging(System.DateTime value);
+    partial void Onfecha_finChanged();
+    partial void Ondireccion_instalacionChanging(string value);
+    partial void Ondireccion_instalacionChanged();
+    partial void Onsaldo_totalChanging(decimal value);
+    partial void Onsaldo_totalChanged();
+    partial void Onid_estado_contratoChanging(string value);
+    partial void Onid_estado_contratoChanged();
+    partial void Onid_usuarioChanging(string value);
+    partial void Onid_usuarioChanged();
+    partial void Onmonto_cuotaChanging(System.Nullable<decimal> value);
+    partial void Onmonto_cuotaChanged();
+    partial void OnmesesChanging(System.Nullable<int> value);
+    partial void OnmesesChanged();
+    #endregion
+		
+		public Contrato()
+		{
+			this._Servicio = new EntitySet<Servicio>(new Action<Servicio>(this.attach_Servicio), new Action<Servicio>(this.detach_Servicio));
+			this._Visita_tecnica = new EntitySet<Visita_tecnica>(new Action<Visita_tecnica>(this.attach_Visita_tecnica), new Action<Visita_tecnica>(this.detach_Visita_tecnica));
+			this._Cliente = default(EntityRef<Cliente>);
+			this._Estado_contrato = default(EntityRef<Estado_contrato>);
+			this._Info_cobro = default(EntityRef<Info_cobro>);
+			this._Municipio = default(EntityRef<Municipio>);
+			this._Usuario = default(EntityRef<Usuario>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_contrato", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id_contrato
+		{
+			get
+			{
+				return this._id_contrato;
+			}
+			set
+			{
+				if ((this._id_contrato != value))
+				{
+					this.Onid_contratoChanging(value);
+					this.SendPropertyChanging();
+					this._id_contrato = value;
+					this.SendPropertyChanged("id_contrato");
+					this.Onid_contratoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_info_cobro", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string id_info_cobro
+		{
+			get
+			{
+				return this._id_info_cobro;
+			}
+			set
+			{
+				if ((this._id_info_cobro != value))
+				{
+					if (this._Info_cobro.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_info_cobroChanging(value);
+					this.SendPropertyChanging();
+					this._id_info_cobro = value;
+					this.SendPropertyChanged("id_info_cobro");
+					this.Onid_info_cobroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_municipio", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string id_municipio
+		{
+			get
+			{
+				return this._id_municipio;
+			}
+			set
+			{
+				if ((this._id_municipio != value))
+				{
+					if (this._Municipio.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_municipioChanging(value);
+					this.SendPropertyChanging();
+					this._id_municipio = value;
+					this.SendPropertyChanged("id_municipio");
+					this.Onid_municipioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cliente", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string id_cliente
+		{
+			get
+			{
+				return this._id_cliente;
+			}
+			set
+			{
+				if ((this._id_cliente != value))
+				{
+					if (this._Cliente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._id_cliente = value;
+					this.SendPropertyChanged("id_cliente");
+					this.Onid_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_inicio", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string fecha_inicio
+		{
+			get
+			{
+				return this._fecha_inicio;
+			}
+			set
+			{
+				if ((this._fecha_inicio != value))
+				{
+					this.Onfecha_inicioChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_inicio = value;
+					this.SendPropertyChanged("fecha_inicio");
+					this.Onfecha_inicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_fin", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_fin
+		{
+			get
+			{
+				return this._fecha_fin;
+			}
+			set
+			{
+				if ((this._fecha_fin != value))
+				{
+					this.Onfecha_finChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_fin = value;
+					this.SendPropertyChanged("fecha_fin");
+					this.Onfecha_finChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_instalacion", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string direccion_instalacion
+		{
+			get
+			{
+				return this._direccion_instalacion;
+			}
+			set
+			{
+				if ((this._direccion_instalacion != value))
+				{
+					this.Ondireccion_instalacionChanging(value);
+					this.SendPropertyChanging();
+					this._direccion_instalacion = value;
+					this.SendPropertyChanged("direccion_instalacion");
+					this.Ondireccion_instalacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_saldo_total", DbType="Decimal(8,2) NOT NULL")]
+		public decimal saldo_total
+		{
+			get
+			{
+				return this._saldo_total;
+			}
+			set
+			{
+				if ((this._saldo_total != value))
+				{
+					this.Onsaldo_totalChanging(value);
+					this.SendPropertyChanging();
+					this._saldo_total = value;
+					this.SendPropertyChanged("saldo_total");
+					this.Onsaldo_totalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estado_contrato", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string id_estado_contrato
+		{
+			get
+			{
+				return this._id_estado_contrato;
+			}
+			set
+			{
+				if ((this._id_estado_contrato != value))
+				{
+					if (this._Estado_contrato.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_estado_contratoChanging(value);
+					this.SendPropertyChanging();
+					this._id_estado_contrato = value;
+					this.SendPropertyChanged("id_estado_contrato");
+					this.Onid_estado_contratoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_usuario", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string id_usuario
+		{
+			get
+			{
+				return this._id_usuario;
+			}
+			set
+			{
+				if ((this._id_usuario != value))
+				{
+					if (this._Usuario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._id_usuario = value;
+					this.SendPropertyChanged("id_usuario");
+					this.Onid_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monto_cuota", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> monto_cuota
+		{
+			get
+			{
+				return this._monto_cuota;
+			}
+			set
+			{
+				if ((this._monto_cuota != value))
+				{
+					this.Onmonto_cuotaChanging(value);
+					this.SendPropertyChanging();
+					this._monto_cuota = value;
+					this.SendPropertyChanged("monto_cuota");
+					this.Onmonto_cuotaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_meses", DbType="Int")]
+		public System.Nullable<int> meses
+		{
+			get
+			{
+				return this._meses;
+			}
+			set
+			{
+				if ((this._meses != value))
+				{
+					this.OnmesesChanging(value);
+					this.SendPropertyChanging();
+					this._meses = value;
+					this.SendPropertyChanged("meses");
+					this.OnmesesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Servicio", Storage="_Servicio", ThisKey="id_contrato", OtherKey="id_contrato")]
+		public EntitySet<Servicio> Servicio
+		{
+			get
+			{
+				return this._Servicio;
+			}
+			set
+			{
+				this._Servicio.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Visita_tecnica", Storage="_Visita_tecnica", ThisKey="id_contrato", OtherKey="id_contrato")]
+		public EntitySet<Visita_tecnica> Visita_tecnica
+		{
+			get
+			{
+				return this._Visita_tecnica;
+			}
+			set
+			{
+				this._Visita_tecnica.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Contrato", Storage="_Cliente", ThisKey="id_cliente", OtherKey="id_cliente", IsForeignKey=true)]
+		public Cliente Cliente
+		{
+			get
+			{
+				return this._Cliente.Entity;
+			}
+			set
+			{
+				Cliente previousValue = this._Cliente.Entity;
+				if (((previousValue != value) 
+							|| (this._Cliente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cliente.Entity = null;
+						previousValue.Contrato.Remove(this);
+					}
+					this._Cliente.Entity = value;
+					if ((value != null))
+					{
+						value.Contrato.Add(this);
+						this._id_cliente = value.id_cliente;
+					}
+					else
+					{
+						this._id_cliente = default(string);
+					}
+					this.SendPropertyChanged("Cliente");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Estado_contrato_Contrato", Storage="_Estado_contrato", ThisKey="id_estado_contrato", OtherKey="id_estado_contrato", IsForeignKey=true)]
+		public Estado_contrato Estado_contrato
+		{
+			get
+			{
+				return this._Estado_contrato.Entity;
+			}
+			set
+			{
+				Estado_contrato previousValue = this._Estado_contrato.Entity;
+				if (((previousValue != value) 
+							|| (this._Estado_contrato.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Estado_contrato.Entity = null;
+						previousValue.Contrato.Remove(this);
+					}
+					this._Estado_contrato.Entity = value;
+					if ((value != null))
+					{
+						value.Contrato.Add(this);
+						this._id_estado_contrato = value.id_estado_contrato;
+					}
+					else
+					{
+						this._id_estado_contrato = default(string);
+					}
+					this.SendPropertyChanged("Estado_contrato");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Info_cobro_Contrato", Storage="_Info_cobro", ThisKey="id_info_cobro", OtherKey="id_info_cobro", IsForeignKey=true)]
+		public Info_cobro Info_cobro
+		{
+			get
+			{
+				return this._Info_cobro.Entity;
+			}
+			set
+			{
+				Info_cobro previousValue = this._Info_cobro.Entity;
+				if (((previousValue != value) 
+							|| (this._Info_cobro.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Info_cobro.Entity = null;
+						previousValue.Contrato.Remove(this);
+					}
+					this._Info_cobro.Entity = value;
+					if ((value != null))
+					{
+						value.Contrato.Add(this);
+						this._id_info_cobro = value.id_info_cobro;
+					}
+					else
+					{
+						this._id_info_cobro = default(string);
+					}
+					this.SendPropertyChanged("Info_cobro");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Municipio_Contrato", Storage="_Municipio", ThisKey="id_municipio", OtherKey="id_municipio", IsForeignKey=true)]
+		public Municipio Municipio
+		{
+			get
+			{
+				return this._Municipio.Entity;
+			}
+			set
+			{
+				Municipio previousValue = this._Municipio.Entity;
+				if (((previousValue != value) 
+							|| (this._Municipio.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Municipio.Entity = null;
+						previousValue.Contrato.Remove(this);
+					}
+					this._Municipio.Entity = value;
+					if ((value != null))
+					{
+						value.Contrato.Add(this);
+						this._id_municipio = value.id_municipio;
+					}
+					else
+					{
+						this._id_municipio = default(string);
+					}
+					this.SendPropertyChanged("Municipio");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Contrato", Storage="_Usuario", ThisKey="id_usuario", OtherKey="id_usuario", IsForeignKey=true)]
+		public Usuario Usuario
+		{
+			get
+			{
+				return this._Usuario.Entity;
+			}
+			set
+			{
+				Usuario previousValue = this._Usuario.Entity;
+				if (((previousValue != value) 
+							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Usuario.Entity = null;
+						previousValue.Contrato.Remove(this);
+					}
+					this._Usuario.Entity = value;
+					if ((value != null))
+					{
+						value.Contrato.Add(this);
+						this._id_usuario = value.id_usuario;
+					}
+					else
+					{
+						this._id_usuario = default(string);
+					}
+					this.SendPropertyChanged("Usuario");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Servicio(Servicio entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contrato = this;
+		}
+		
+		private void detach_Servicio(Servicio entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contrato = null;
+		}
+		
+		private void attach_Visita_tecnica(Visita_tecnica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contrato = this;
+		}
+		
+		private void detach_Visita_tecnica(Visita_tecnica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contrato = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pago")]
+	public partial class Pago : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _id_pago;
+		
+		private decimal _sub_total;
+		
+		private int _cantidad;
+		
+		private string _id_estado_pago;
+		
+		private string _id_tipo_pago;
+		
+		private string _id_servicio;
+		
+		private System.DateTime _fecha_pago;
+		
+		private EntitySet<Factura> _Factura;
+		
+		private EntityRef<Estado_pago> _Estado_pago;
+		
+		private EntityRef<Servicio> _Servicio;
+		
+		private EntityRef<Tipo_pago> _Tipo_pago;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_pagoChanging(string value);
+    partial void Onid_pagoChanged();
+    partial void Onsub_totalChanging(decimal value);
+    partial void Onsub_totalChanged();
+    partial void OncantidadChanging(int value);
+    partial void OncantidadChanged();
+    partial void Onid_estado_pagoChanging(string value);
+    partial void Onid_estado_pagoChanged();
+    partial void Onid_tipo_pagoChanging(string value);
+    partial void Onid_tipo_pagoChanged();
+    partial void Onid_servicioChanging(string value);
+    partial void Onid_servicioChanged();
+    partial void Onfecha_pagoChanging(System.DateTime value);
+    partial void Onfecha_pagoChanged();
+    #endregion
+		
+		public Pago()
+		{
+			this._Factura = new EntitySet<Factura>(new Action<Factura>(this.attach_Factura), new Action<Factura>(this.detach_Factura));
+			this._Estado_pago = default(EntityRef<Estado_pago>);
+			this._Servicio = default(EntityRef<Servicio>);
+			this._Tipo_pago = default(EntityRef<Tipo_pago>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pago", DbType="NVarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id_pago
+		{
+			get
+			{
+				return this._id_pago;
+			}
+			set
+			{
+				if ((this._id_pago != value))
+				{
+					this.Onid_pagoChanging(value);
+					this.SendPropertyChanging();
+					this._id_pago = value;
+					this.SendPropertyChanged("id_pago");
+					this.Onid_pagoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sub_total", DbType="Decimal(7,2) NOT NULL")]
+		public decimal sub_total
+		{
+			get
+			{
+				return this._sub_total;
+			}
+			set
+			{
+				if ((this._sub_total != value))
+				{
+					this.Onsub_totalChanging(value);
+					this.SendPropertyChanging();
+					this._sub_total = value;
+					this.SendPropertyChanged("sub_total");
+					this.Onsub_totalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Int NOT NULL")]
+		public int cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				if ((this._cantidad != value))
+				{
+					this.OncantidadChanging(value);
+					this.SendPropertyChanging();
+					this._cantidad = value;
+					this.SendPropertyChanged("cantidad");
+					this.OncantidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estado_pago", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string id_estado_pago
+		{
+			get
+			{
+				return this._id_estado_pago;
+			}
+			set
+			{
+				if ((this._id_estado_pago != value))
+				{
+					if (this._Estado_pago.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_estado_pagoChanging(value);
+					this.SendPropertyChanging();
+					this._id_estado_pago = value;
+					this.SendPropertyChanged("id_estado_pago");
+					this.Onid_estado_pagoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipo_pago", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string id_tipo_pago
+		{
+			get
+			{
+				return this._id_tipo_pago;
+			}
+			set
+			{
+				if ((this._id_tipo_pago != value))
+				{
+					if (this._Tipo_pago.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_tipo_pagoChanging(value);
+					this.SendPropertyChanging();
+					this._id_tipo_pago = value;
+					this.SendPropertyChanged("id_tipo_pago");
+					this.Onid_tipo_pagoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_servicio", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		public string id_servicio
+		{
+			get
+			{
+				return this._id_servicio;
+			}
+			set
+			{
+				if ((this._id_servicio != value))
+				{
+					if (this._Servicio.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_servicioChanging(value);
+					this.SendPropertyChanging();
+					this._id_servicio = value;
+					this.SendPropertyChanged("id_servicio");
+					this.Onid_servicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_pago", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_pago
+		{
+			get
+			{
+				return this._fecha_pago;
+			}
+			set
+			{
+				if ((this._fecha_pago != value))
+				{
+					this.Onfecha_pagoChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_pago = value;
+					this.SendPropertyChanged("fecha_pago");
+					this.Onfecha_pagoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pago_Factura", Storage="_Factura", ThisKey="id_pago", OtherKey="id_pago")]
+		public EntitySet<Factura> Factura
+		{
+			get
+			{
+				return this._Factura;
+			}
+			set
+			{
+				this._Factura.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Estado_pago_Pago", Storage="_Estado_pago", ThisKey="id_estado_pago", OtherKey="id_estado_pago", IsForeignKey=true)]
+		public Estado_pago Estado_pago
+		{
+			get
+			{
+				return this._Estado_pago.Entity;
+			}
+			set
+			{
+				Estado_pago previousValue = this._Estado_pago.Entity;
+				if (((previousValue != value) 
+							|| (this._Estado_pago.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Estado_pago.Entity = null;
+						previousValue.Pago.Remove(this);
+					}
+					this._Estado_pago.Entity = value;
+					if ((value != null))
+					{
+						value.Pago.Add(this);
+						this._id_estado_pago = value.id_estado_pago;
+					}
+					else
+					{
+						this._id_estado_pago = default(string);
+					}
+					this.SendPropertyChanged("Estado_pago");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Servicio_Pago", Storage="_Servicio", ThisKey="id_servicio", OtherKey="id_servicio", IsForeignKey=true)]
+		public Servicio Servicio
+		{
+			get
+			{
+				return this._Servicio.Entity;
+			}
+			set
+			{
+				Servicio previousValue = this._Servicio.Entity;
+				if (((previousValue != value) 
+							|| (this._Servicio.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Servicio.Entity = null;
+						previousValue.Pago.Remove(this);
+					}
+					this._Servicio.Entity = value;
+					if ((value != null))
+					{
+						value.Pago.Add(this);
+						this._id_servicio = value.id_servicio;
+					}
+					else
+					{
+						this._id_servicio = default(string);
+					}
+					this.SendPropertyChanged("Servicio");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tipo_pago_Pago", Storage="_Tipo_pago", ThisKey="id_tipo_pago", OtherKey="id_tipo_pago", IsForeignKey=true)]
+		public Tipo_pago Tipo_pago
+		{
+			get
+			{
+				return this._Tipo_pago.Entity;
+			}
+			set
+			{
+				Tipo_pago previousValue = this._Tipo_pago.Entity;
+				if (((previousValue != value) 
+							|| (this._Tipo_pago.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tipo_pago.Entity = null;
+						previousValue.Pago.Remove(this);
+					}
+					this._Tipo_pago.Entity = value;
+					if ((value != null))
+					{
+						value.Pago.Add(this);
+						this._id_tipo_pago = value.id_tipo_pago;
+					}
+					else
+					{
+						this._id_tipo_pago = default(string);
+					}
+					this.SendPropertyChanged("Tipo_pago");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Factura(Factura entity)
+		{
+			this.SendPropertyChanging();
+			entity.Pago = this;
+		}
+		
+		private void detach_Factura(Factura entity)
+		{
+			this.SendPropertyChanging();
+			entity.Pago = null;
 		}
 	}
 }

@@ -63,6 +63,16 @@ namespace ExamenFinalBD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ConectaFacil {
+            get {
+                object obj = ResourceManager.GetObject("ConectaFacil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_08T21_44_27_576Z {
             get {
                 object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-08T21_44_27.576Z", resourceCulture);
@@ -96,6 +106,66 @@ namespace ExamenFinalBD.Properties {
         internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_08T21_44_35_043Z {
             get {
                 object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-08T21_44_35.043Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_09T23_48_52_290Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-09T23_48_52.290Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_09T23_49_05_018Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-09T23_49_05.018Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_09T23_49_14_328Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-09T23_49_14.328Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_09T23_49_28_938Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-09T23_49_28.938Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_09T23_51_00_271Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-09T23_51_00.271Z", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_AI_Studio_2025_11_09T23_56_17_610Z {
+            get {
+                object obj = ResourceManager.GetObject("Google_AI_Studio_2025-11-09T23_56_17.610Z", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
