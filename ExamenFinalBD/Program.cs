@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.Drawing.Text;
-using System.IO;
-using System.Reflection;
+﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
-using DevExpress.LookAndFeel;
 using DevExpress.Utils;
+using DevExpress.XtraEditors;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace ExamenFinalBD
 {
     internal static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
         static void Main()
@@ -33,7 +35,16 @@ namespace ExamenFinalBD
             UserLookAndFeel.Default.SetSkinStyle("Office 2019 Colorful");
             AppearanceObject.DefaultFont = new Font("Microsoft JhengHei UI", 8);
 
-            Application.Run(new Login());
+            
+
+            var cs = ConfigurationManager.ConnectionStrings["ConexionBD"].ConnectionString;
+            using (var cn = new SqlConnection(cs))
+            {
+                cn.Open(); 
+            }
+
+
+            Application.Run(new AdminHome());
 
         }
     }
