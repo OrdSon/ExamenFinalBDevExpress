@@ -108,6 +108,32 @@
             this.clienteIdLabel = new DevExpress.XtraEditors.LabelControl();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barStaticItem6 = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiDireccion = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barStaticItem8 = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiInicioContrato = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem11 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem12 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem13 = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiTotalCable = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiTotalInternet = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiTotalTelefono = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiTotalFactura = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barStaticItem18 = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiFinContrato = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
@@ -174,9 +200,24 @@
             this.barStaticItem2,
             this.barEditItem1,
             this.barStaticItem4,
-            this.idTxt});
+            this.idTxt,
+            this.barStaticItem5,
+            this.barStaticItem6,
+            this.bsiDireccion,
+            this.barStaticItem8,
+            this.bsiInicioContrato,
+            this.barStaticItem10,
+            this.barStaticItem11,
+            this.barStaticItem12,
+            this.barStaticItem13,
+            this.bsiTotalCable,
+            this.bsiTotalInternet,
+            this.bsiTotalTelefono,
+            this.bsiTotalFactura,
+            this.barStaticItem18,
+            this.bsiFinContrato});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 21;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -268,6 +309,7 @@
             // 
             this.barEditItem1.AutoFillWidthInMenu = DevExpress.Utils.DefaultBoolean.True;
             this.barEditItem1.Edit = this.repositoryItemComboBox1;
+            this.barEditItem1.EditWidth = 130;
             this.barEditItem1.Hint = "Direcciones de servicio disponibles";
             this.barEditItem1.Id = 18;
             this.barEditItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,7 +339,9 @@
             // 
             // idTxt
             // 
+            this.idTxt.AutoFillWidthInMenu = DevExpress.Utils.DefaultBoolean.True;
             this.idTxt.Edit = this.repositoryItemTextEdit2;
+            this.idTxt.EditWidth = 130;
             this.idTxt.Id = 20;
             this.idTxt.ItemAppearance.Disabled.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idTxt.ItemAppearance.Disabled.Options.UseFont = true;
@@ -322,6 +366,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.idTxt);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barStaticItem5);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Numero de cuenta";
             // 
@@ -347,7 +392,14 @@
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup10,
+            this.ribbonPageGroup19,
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup12,
+            this.ribbonPageGroup13,
+            this.ribbonPageGroup14});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Pagos";
             // 
@@ -356,7 +408,6 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barStaticItem4, true);
             this.ribbonPageGroup5.ItemLinks.Add(this.barEditItem1);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // ribbonPage3
             // 
@@ -886,7 +937,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(1485, 97);
+            this.labelControl1.Location = new System.Drawing.Point(1614, 87);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(76, 31);
             this.labelControl1.TabIndex = 11;
@@ -901,7 +952,7 @@
             // 
             this.clienteIdLabel.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clienteIdLabel.Appearance.Options.UseFont = true;
-            this.clienteIdLabel.Location = new System.Drawing.Point(1608, 97);
+            this.clienteIdLabel.Location = new System.Drawing.Point(1696, 87);
             this.clienteIdLabel.Name = "clienteIdLabel";
             this.clienteIdLabel.Size = new System.Drawing.Size(10, 31);
             this.clienteIdLabel.TabIndex = 12;
@@ -916,6 +967,194 @@
             // barStaticItem3
             // 
             this.barStaticItem3.Name = "barStaticItem3";
+            // 
+            // barStaticItem5
+            // 
+            this.barStaticItem5.Caption = "                                       ";
+            this.barStaticItem5.Id = 21;
+            this.barStaticItem5.Name = "barStaticItem5";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem6);
+            this.ribbonPageGroup9.ItemLinks.Add(this.bsiDireccion);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.barStaticItem8);
+            this.ribbonPageGroup10.ItemLinks.Add(this.bsiInicioContrato);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.barStaticItem10);
+            this.ribbonPageGroup11.ItemLinks.Add(this.bsiTotalCable);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.barStaticItem11);
+            this.ribbonPageGroup12.ItemLinks.Add(this.bsiTotalInternet);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.barStaticItem12);
+            this.ribbonPageGroup13.ItemLinks.Add(this.bsiTotalTelefono);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.barStaticItem13);
+            this.ribbonPageGroup14.ItemLinks.Add(this.bsiTotalFactura);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            // 
+            // barStaticItem6
+            // 
+            this.barStaticItem6.Caption = "Dirección";
+            this.barStaticItem6.Id = 22;
+            this.barStaticItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barStaticItem6.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem6.Name = "barStaticItem6";
+            // 
+            // bsiDireccion
+            // 
+            this.bsiDireccion.Caption = "-";
+            this.bsiDireccion.Id = 23;
+            this.bsiDireccion.Name = "bsiDireccion";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.barStaticItem6);
+            this.ribbonPageGroup15.ItemLinks.Add(this.bsiDireccion);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "ribbonPageGroup9";
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.barStaticItem6);
+            this.ribbonPageGroup16.ItemLinks.Add(this.bsiDireccion);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "ribbonPageGroup9";
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.ItemLinks.Add(this.barStaticItem6);
+            this.ribbonPageGroup17.ItemLinks.Add(this.bsiDireccion);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "ribbonPageGroup9";
+            // 
+            // ribbonPageGroup18
+            // 
+            this.ribbonPageGroup18.ItemLinks.Add(this.barStaticItem6);
+            this.ribbonPageGroup18.ItemLinks.Add(this.bsiDireccion);
+            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
+            this.ribbonPageGroup18.Text = "ribbonPageGroup9";
+            // 
+            // barStaticItem8
+            // 
+            this.barStaticItem8.Caption = "Inicio de contrato";
+            this.barStaticItem8.Id = 24;
+            this.barStaticItem8.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.barStaticItem8.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem8.Name = "barStaticItem8";
+            // 
+            // bsiInicioContrato
+            // 
+            this.bsiInicioContrato.Caption = "-";
+            this.bsiInicioContrato.Id = 25;
+            this.bsiInicioContrato.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bsiInicioContrato.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiInicioContrato.Name = "bsiInicioContrato";
+            // 
+            // barStaticItem10
+            // 
+            this.barStaticItem10.Caption = "Total cable";
+            this.barStaticItem10.Id = 26;
+            this.barStaticItem10.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F);
+            this.barStaticItem10.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem10.Name = "barStaticItem10";
+            // 
+            // barStaticItem11
+            // 
+            this.barStaticItem11.Caption = "Total internet";
+            this.barStaticItem11.Id = 27;
+            this.barStaticItem11.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F);
+            this.barStaticItem11.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem11.Name = "barStaticItem11";
+            // 
+            // barStaticItem12
+            // 
+            this.barStaticItem12.Caption = "Total telefono";
+            this.barStaticItem12.Id = 29;
+            this.barStaticItem12.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F);
+            this.barStaticItem12.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem12.Name = "barStaticItem12";
+            this.barStaticItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem12_ItemClick);
+            // 
+            // barStaticItem13
+            // 
+            this.barStaticItem13.Caption = "Total pendiente";
+            this.barStaticItem13.Id = 30;
+            this.barStaticItem13.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F);
+            this.barStaticItem13.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem13.Name = "barStaticItem13";
+            // 
+            // bsiTotalCable
+            // 
+            this.bsiTotalCable.Caption = "-";
+            this.bsiTotalCable.Id = 31;
+            this.bsiTotalCable.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F);
+            this.bsiTotalCable.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiTotalCable.Name = "bsiTotalCable";
+            // 
+            // bsiTotalInternet
+            // 
+            this.bsiTotalInternet.Caption = "-";
+            this.bsiTotalInternet.Id = 32;
+            this.bsiTotalInternet.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F);
+            this.bsiTotalInternet.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiTotalInternet.Name = "bsiTotalInternet";
+            // 
+            // bsiTotalTelefono
+            // 
+            this.bsiTotalTelefono.Caption = "-";
+            this.bsiTotalTelefono.Id = 33;
+            this.bsiTotalTelefono.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F);
+            this.bsiTotalTelefono.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiTotalTelefono.Name = "bsiTotalTelefono";
+            // 
+            // bsiTotalFactura
+            // 
+            this.bsiTotalFactura.Caption = "-";
+            this.bsiTotalFactura.Id = 34;
+            this.bsiTotalFactura.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F);
+            this.bsiTotalFactura.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiTotalFactura.Name = "bsiTotalFactura";
+            // 
+            // ribbonPageGroup19
+            // 
+            this.ribbonPageGroup19.ItemLinks.Add(this.barStaticItem18);
+            this.ribbonPageGroup19.ItemLinks.Add(this.bsiFinContrato);
+            this.ribbonPageGroup19.Name = "ribbonPageGroup19";
+            this.ribbonPageGroup19.Text = "ribbonPageGroup19";
+            // 
+            // barStaticItem18
+            // 
+            this.barStaticItem18.Caption = "Fin de contrato";
+            this.barStaticItem18.Id = 35;
+            this.barStaticItem18.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI", 10F);
+            this.barStaticItem18.ItemAppearance.Normal.Options.UseFont = true;
+            this.barStaticItem18.Name = "barStaticItem18";
+            // 
+            // bsiFinContrato
+            // 
+            this.bsiFinContrato.Caption = "-";
+            this.bsiFinContrato.Id = 36;
+            this.bsiFinContrato.ItemAppearance.Normal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F);
+            this.bsiFinContrato.ItemAppearance.Normal.Options.UseFont = true;
+            this.bsiFinContrato.Name = "bsiFinContrato";
             // 
             // Cajero
             // 
@@ -1064,5 +1303,31 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
         private DevExpress.XtraBars.BarEditItem idTxt;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem5;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem6;
+        private DevExpress.XtraBars.BarStaticItem bsiDireccion;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem8;
+        private DevExpress.XtraBars.BarStaticItem bsiInicioContrato;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem10;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem11;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem12;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem13;
+        private DevExpress.XtraBars.BarStaticItem bsiTotalCable;
+        private DevExpress.XtraBars.BarStaticItem bsiTotalInternet;
+        private DevExpress.XtraBars.BarStaticItem bsiTotalTelefono;
+        private DevExpress.XtraBars.BarStaticItem bsiTotalFactura;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem18;
+        private DevExpress.XtraBars.BarStaticItem bsiFinContrato;
     }
 }

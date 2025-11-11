@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TuProyecto.DAO;
 
 namespace ExamenFinalBD
 {
@@ -18,6 +19,7 @@ namespace ExamenFinalBD
         Cliente cliente;
         ContratoDAO contratoDAO = new ContratoDAO();
         ClienteDAO clienteDAO = new ClienteDAO();
+        ResumenPagosDAO resumenDAO = new ResumenPagosDAO();
         PagoDAO pagoDAO = new PagoDAO();
         public Cajero()
         {
@@ -104,14 +106,55 @@ namespace ExamenFinalBD
             try
             {
                 var lista = pagoDAO.ObtenerPagosPorContrato(idContrato);
-
                 pagosGrid.DataSource = lista;
-                gridView1.OptionsView.ColumnAutoWidth = false;
-                gridView1.BestFitColumns();
 
-                // Si tu GridControl tiene una GridView asociada:
-                // gridViewPagos.OptionsView.ColumnAutoWidth = false;
-                // gridViewPagos.BestFitColumns();
+                var view = gridView1;
+
+                // Ocultar columnas técnicas
+                view.Columns[nameof(PagoGridDTO.IdContrato)].Visible = false;
+                view.Columns[nameof(PagoGridDTO.IdServicio)].Visible = false;
+                view.Columns[nameof(PagoGridDTO.IdCuota)].Visible = false;
+                view.Columns[nameof(PagoGridDTO.MontoFactura)].Visible = false;
+                view.Columns[nameof(PagoGridDTO.MontoPago)].Visible = false;
+
+                // Captions
+                view.Columns[nameof(PagoGridDTO.TipoServicio)].Caption = "Tipo de servicio";
+                view.Columns[nameof(PagoGridDTO.NumeroCuota)].Caption = "Cuota #";
+                view.Columns[nameof(PagoGridDTO.IdFactura)].Caption = "Factura";
+                view.Columns[nameof(PagoGridDTO.FechaVencimientoCuota)].Caption = "Vence";
+                view.Columns[nameof(PagoGridDTO.IdPago)].Caption = "Pago";
+                view.Columns[nameof(PagoGridDTO.FechaPago)].Caption = "Fecha pago";
+                view.Columns[nameof(PagoGridDTO.EstadoPago)].Caption = "Estado pago";
+                view.Columns[nameof(PagoGridDTO.PagoAtrasado)].Caption = "¿Atrasado?";
+                view.Columns[nameof(PagoGridDTO.MontoCuota)].Caption = "Monto cuota";
+                view.Columns[nameof(PagoGridDTO.MoraAplicada)].Caption = "Mora";
+                view.Columns[nameof(PagoGridDTO.TotalConMora)].Caption = "Total con mora";
+                view.Columns[nameof(PagoGridDTO.BalanceForward)].Caption = "Balance forward";
+
+                // Orden de columnas:
+                view.Columns[nameof(PagoGridDTO.TipoServicio)].VisibleIndex = 0;
+                view.Columns[nameof(PagoGridDTO.NumeroCuota)].VisibleIndex = 1;
+                view.Columns[nameof(PagoGridDTO.IdFactura)].VisibleIndex = 2;
+                view.Columns[nameof(PagoGridDTO.FechaVencimientoCuota)].VisibleIndex = 3;
+                view.Columns[nameof(PagoGridDTO.IdPago)].VisibleIndex = 4;
+                view.Columns[nameof(PagoGridDTO.FechaPago)].VisibleIndex = 5;
+                view.Columns[nameof(PagoGridDTO.EstadoPago)].VisibleIndex = 6;
+                view.Columns[nameof(PagoGridDTO.PagoAtrasado)].VisibleIndex = 7;
+                view.Columns[nameof(PagoGridDTO.MontoCuota)].VisibleIndex = 8;
+                view.Columns[nameof(PagoGridDTO.MoraAplicada)].VisibleIndex = 9;
+                view.Columns[nameof(PagoGridDTO.TotalConMora)].VisibleIndex = 10;
+                view.Columns[nameof(PagoGridDTO.BalanceForward)].VisibleIndex = 11;
+
+                // Formato de fechas
+                view.Columns[nameof(PagoGridDTO.FechaVencimientoCuota)].DisplayFormat.FormatType =
+                    DevExpress.Utils.FormatType.DateTime;
+                view.Columns[nameof(PagoGridDTO.FechaVencimientoCuota)].DisplayFormat.FormatString = "dd/MM/yyyy";
+
+                view.Columns[nameof(PagoGridDTO.FechaPago)].DisplayFormat.FormatType =
+                    DevExpress.Utils.FormatType.DateTime;
+                view.Columns[nameof(PagoGridDTO.FechaPago)].DisplayFormat.FormatString = "dd/MM/yyyy";
+
+                view.BestFitColumns();
             }
             catch (Exception ex)
             {
@@ -119,6 +162,8 @@ namespace ExamenFinalBD
                     "Pagos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
         private void nuevoClienteAutoToggle()
         {
             NuevoClienteForm nuevoClienteForm = new NuevoClienteForm(this);
@@ -332,6 +377,33 @@ namespace ExamenFinalBD
             }
         }
 
+        private void ActualizarBarraContrato(string idContrato)
+        {
+            var resumen = resumenDAO.ObtenerResumenActual(idContrato);
+
+            if (resumen == null)
+            {
+                bsiDireccion.Caption = "-";
+                bsiInicioContrato.Caption = "-";
+                bsiFinContrato.Caption = "-";
+                bsiTotalCable.Caption = "-";
+                bsiTotalInternet.Caption = "-";
+                bsiTotalTelefono.Caption = "-";
+                bsiTotalFactura.Caption = "-";
+                return;
+            }
+
+            bsiDireccion.Caption = resumen.DireccionInstalacion;
+            bsiInicioContrato.Caption = resumen.FechaInicioContratoTexto;
+            bsiFinContrato.Caption = resumen.FechaFinContrato.ToString("dd/MM/yyyy");
+
+            bsiTotalCable.Caption = resumen.TotalCable.ToString("Q0.00");
+            bsiTotalInternet.Caption = resumen.TotalInternet.ToString("Q0.00");
+            bsiTotalTelefono.Caption = resumen.TotalTelefono.ToString("Q0.00");
+
+            bsiTotalFactura.Caption = resumen.TotalPendiente.ToString("Q0.00");
+        }
+
 
         private void clienteIdLabel_Click(object sender, EventArgs e)
         {
@@ -352,7 +424,13 @@ namespace ExamenFinalBD
         {
             if(barEditItem1.EditValue!=null) {
                 CargarPagosContrato(barEditItem1.EditValue.ToString());
+                ActualizarBarraContrato(barEditItem1.EditValue.ToString());
             }
+        }
+
+        private void barStaticItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }
