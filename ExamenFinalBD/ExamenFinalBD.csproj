@@ -62,7 +62,6 @@
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-<<<<<<< HEAD
     <Reference Include="HealthChecks.AzureSearch, Version=9.0.0.0, Culture=neutral, PublicKeyToken=2783471aaf72b3d9, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNetCore.HealthChecks.AzureSearch.9.0.0\lib\netstandard2.0\HealthChecks.AzureSearch.dll</HintPath>
     </Reference>
@@ -102,8 +101,7 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-=======
->>>>>>> añadida pestaña de pagos
+
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
