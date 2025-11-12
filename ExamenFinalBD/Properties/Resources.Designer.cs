@@ -63,6 +63,9 @@ namespace ExamenFinalBD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Imagen_de_WhatsApp_2025_11_07_a_las_11_11_30_2310c900 {
+            get {
+                object obj = ResourceManager.GetObject("Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900", resourceCulture);
         internal static System.Drawing.Bitmap ConectaFacil {
             get {
                 object obj = ResourceManager.GetObject("ConectaFacil", resourceCulture);

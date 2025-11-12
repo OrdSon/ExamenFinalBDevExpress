@@ -49,6 +49,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Azure.Core, Version=1.36.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.36.0\lib\net472\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Search.Documents, Version=11.5.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Search.Documents.11.5.0\lib\netstandard2.0\Azure.Search.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="AzureSearchClient, Version=0.8.5522.36498, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AzureSearchClient.0.8.5522.36498\lib\net45\AzureSearchClient.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -62,6 +71,7 @@
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="HealthChecks.AzureSearch, Version=9.0.0.0, Culture=neutral, PublicKeyToken=2783471aaf72b3d9, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNetCore.HealthChecks.AzureSearch.9.0.0\lib\netstandard2.0\HealthChecks.AzureSearch.dll</HintPath>
     </Reference>
@@ -101,7 +111,13 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SplitPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFSplit.1.0.0\lib\net461\SplitPDF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -177,6 +193,42 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tecnico\BD\Linq.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Linq.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnico\BLL\General.cs" />
+    <Compile Include="Tecnico\BuscaContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\BuscaContrato.Designer.cs">
+      <DependentUpon>BuscaContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnico\BuscarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\BuscarRepuesto.Designer.cs">
+      <DependentUpon>BuscarRepuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnico\CreaReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\CreaReportes.Designer.cs">
+      <DependentUpon>CreaReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnico\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnico\Retomar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\Retomar.Designer.cs">
+      <DependentUpon>Retomar.cs</DependentUpon>
+    </Compile>
     <Compile Include="RibbonForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +269,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tecnico\BuscaContrato.resx">
+      <DependentUpon>BuscaContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tecnico\BuscarRepuesto.resx">
+      <DependentUpon>BuscarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tecnico\CreaReportes.resx">
+      <DependentUpon>CreaReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tecnico\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tecnico\Retomar.resx">
+      <DependentUpon>Retomar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <EmbeddedResource Include="VentanaPago.resx">
       <DependentUpon>VentanaPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +330,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup />

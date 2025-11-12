@@ -40,7 +40,11 @@
         <elementListCompartment Id="dbb2281b-8f35-4831-a136-3c4160747426" absoluteBounds="2.89, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.875 : 3.23240397135417); (3.875 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+  <<<<<<< Luis
+      <associationConnector edgePoints="[(3.875 : 3.23240397135417); (3.875 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+  =======
+      <associationConnector edgePoints="[(3.875 : 3.23240397135417); (3.875 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+  >>>>>>> main
       <AssociationMoniker Name="/LinqDataContext/Contrato/Contrato_Visita_tecnica" />
       <nodes>
         <classShapeMoniker Id="1e82fc8f-ab1c-4853-8d57-443e50fb45dd" />
@@ -163,6 +167,39 @@
       <nodes>
         <classShapeMoniker Id="e627ef8a-4992-44f0-aa31-f2975e852e2c" />
         <classShapeMoniker Id="7c4e38c9-db0f-45ff-bd15-ea668ef0029e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="659c7432-c9e4-4cc7-92ef-542c28672a32" absoluteBounds="7.625, 2.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqDataContext/Servicio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be8f2f4b-9169-422e-9f89-407237e2a238" absoluteBounds="7.64, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 2.35179768880208); (6.16666666666667 : 2.35179768880208 : JumpStart); (6.33333333333333 : 2.35179768880208 : JumpEnd); (7.65625 : 2.35179768880208); (7.65625 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqDataContext/Contrato/Contrato_Servicio" />
+      <nodes>
+        <classShapeMoniker Id="1e82fc8f-ab1c-4853-8d57-443e50fb45dd" />
+        <classShapeMoniker Id="659c7432-c9e4-4cc7-92ef-542c28672a32" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4cb68a00-b80c-4960-bb70-e1370bac09db" absoluteBounds="7.75, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqDataContext/Tipo_servicio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4022c2f1-f230-4633-aaba-f4508dcb4bbd" absoluteBounds="7.7650000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.71875 : 1.8862939453125); (9.71875 : 6.29734537760417); (7.25 : 6.29734537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqDataContext/Tipo_servicio/Tipo_servicio_Falla" />
+      <nodes>
+        <classShapeMoniker Id="4cb68a00-b80c-4960-bb70-e1370bac09db" />
+        <classShapeMoniker Id="7c4e38c9-db0f-45ff-bd15-ea668ef0029e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.6875 : 1.8862939453125); (8.6875 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqDataContext/Tipo_servicio/Tipo_servicio_Servicio" />
+      <nodes>
+        <classShapeMoniker Id="4cb68a00-b80c-4960-bb70-e1370bac09db" />
+        <classShapeMoniker Id="659c7432-c9e4-4cc7-92ef-542c28672a32" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

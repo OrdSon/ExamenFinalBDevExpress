@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagen de WhatsApp 2025-11-07 a las 11.11.30_2310c900.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="Google_AI_Studio_2025-11-09T23_51_00.271Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Google_AI_Studio_2025-11-09T23_51_00.271Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-08T21_44_32.054Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\Google_AI_Studio_2025-11-08T21_44_32.054Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-09T23_49_14.328Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Google_AI_Studio_2025-11-09T23_49_14.328Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-09T23_49_28.938Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Google_AI_Studio_2025-11-09T23_49_28.938Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-09T23_56_17.610Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Google_AI_Studio_2025-11-09T23_56_17.610Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-09T23_49_05.018Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Google_AI_Studio_2025-11-09T23_49_05.018Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-08T21_44_30.370Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\Google_AI_Studio_2025-11-08T21_44_30.370Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="morado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\morado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-08T21_44_35.043Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\Google_AI_Studio_2025-11-08T21_44_35.043Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-09T23_48_52.290Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Google_AI_Studio_2025-11-09T23_48_52.290Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Google_AI_Studio_2025-11-08T21_44_27.576Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\Google_AI_Studio_2025-11-08T21_44_27.576Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConectaFacil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ConectaFacil.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

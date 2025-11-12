@@ -12,6 +12,7 @@ using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DevExpress.LookAndFeel;
 using DevExpress.Utils;
+using ExamenFinalBD.Tecnico;
 namespace ExamenFinalBD
 {
     internal static class Program
