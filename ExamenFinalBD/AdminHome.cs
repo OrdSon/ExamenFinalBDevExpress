@@ -1,94 +1,90 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-
 
 namespace ExamenFinalBD
 {
-    public partial class AdminHome : DevExpress.XtraEditors.XtraForm
+    public class AdminHome : XtraForm
     {
+        private RibbonControl ribbon;
+        private BarButtonItem btnClientes;
+        private BarButtonItem btnContratos;
+        private BarButtonItem btnUsuarios;
+        private BarButtonItem btnConfig;
+        private BarButtonItem btnSalir;
+
         public AdminHome()
         {
-            InitializeComponent();
-            Text = "Administrador - Panel principal";
+            // Ventana principal
+            IsMdiContainer = true;
+            Text = "Panel de Administración";
+            WindowState = FormWindowState.Maximized;
 
-            var layout = new TableLayoutPanel
+            InitializeRibbon();
+        }
+
+        private void InitializeRibbon()
+        {
+            ribbon = new RibbonControl
             {
-                Dock = DockStyle.Fill,
-                ColumnCount = 2,
-                RowCount = 4,
-                Padding = new Padding(16),
-                AutoSize = true
-            };
-            for (int r = 0; r < layout.RowCount; r++)
-                layout.RowStyles.Add(new RowStyle(SizeType.Percent, 25));
-            for (int c = 0; c < layout.ColumnCount; c++)
-                layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-
-            var btnConfig = MakeButton("Configuración", () => new Configuración().ShowDialog(this));
-            var btnUsuario = MakeButton("Usuarios", () => new FrmUsuario().ShowDialog(this));
-            var btnCliente = MakeButton("Clientes", () => new FrmCliente().ShowDialog(this));
-            var btnContrato = MakeButton("Contratos", () => new FrmContrato().ShowDialog(this));
-            
-
-            layout.Controls.Add(btnConfig, 0, 0);
-            layout.Controls.Add(btnUsuario, 1, 0);
-            layout.Controls.Add(btnCliente, 0, 1);
-            layout.Controls.Add(btnContrato, 1, 1);
-            
-
-            var lbl = new Label
-            {
-                Dock = DockStyle.Bottom,
-                TextAlign = System.Drawing.ContentAlignment.MiddleRight,
-                Padding = new Padding(0, 8, 8, 8),
-                Text = $"Build: {Application.ProductVersion}"
+                Dock = DockStyle.Top
             };
 
-            Controls.Add(layout);
-            Controls.Add(lbl);
+            // Botones
+            btnClientes = new BarButtonItem() { Caption = "Clientes" };
+            btnContratos = new BarButtonItem() { Caption = "Contratos" };
+            btnUsuarios = new BarButtonItem() { Caption = "Usuarios" };
+            btnConfig = new BarButtonItem() { Caption = "Configuración" };
+            btnSalir = new BarButtonItem() { Caption = "Salir" };
 
+            btnClientes.ItemClick += (s, e) => OpenForm<FrmCliente>();
+            btnContratos.ItemClick += (s, e) => OpenForm<FrmContrato>();
+            btnUsuarios.ItemClick += (s, e) => OpenForm<FrmUsuario>();
+            btnConfig.ItemClick += (s, e) => OpenForm<Configuración>();
+            btnSalir.ItemClick += (s, e) => Close();
 
+            ribbon.Items.AddRange(new BarItem[] { btnClientes, btnContratos, btnUsuarios, btnConfig, btnSalir });
+
+            // Página y grupos
+            var pageInicio = new RibbonPage("Inicio");
+            var grpOperaciones = new RibbonPageGroup("Operaciones");
+            var grpSistema = new RibbonPageGroup("Sistema");
+
+            grpOperaciones.ItemLinks.Add(btnClientes);
+            grpOperaciones.ItemLinks.Add(btnContratos);
+            grpOperaciones.ItemLinks.Add(btnUsuarios);
+            grpSistema.ItemLinks.Add(btnConfig);
+            grpSistema.ItemLinks.Add(btnSalir);
+
+            pageInicio.Groups.Add(grpOperaciones);
+            pageInicio.Groups.Add(grpSistema);
+
+            ribbon.Pages.Add(pageInicio);
+            Controls.Add(ribbon);
         }
 
-
-        private SimpleButton MakeButton(string text, Action onClick)
+        // Abre el formulario como MDI hijo; si ya está abierto, lo trae al frente.
+        private void OpenForm<T>() where T : Form, new()
         {
-            var b = new SimpleButton
+            var existing = MdiChildren.FirstOrDefault(f => f is T);
+            if (existing != null)
             {
-                Text = text,
-                Dock = DockStyle.Fill,
-                Height = 48
+                existing.Activate();
+                return;
+            }
+
+            var frm = new T
+            {
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterParent
             };
-            b.Click += (s, e) => onClick();
-            return b;
-        }
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AdminHome_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
+            frm.Show();
         }
     }
 }
