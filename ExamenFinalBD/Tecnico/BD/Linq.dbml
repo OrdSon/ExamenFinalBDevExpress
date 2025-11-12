@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=sql5113.site4now.net;Persist Security Info=True;User ID=db_ac0671_final_admin;Encrypt=False" SettingsObjectName="ExamenFinalBD.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_ac0671_final" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Table Name="dbo.Cliente" Member="Cliente">
     <Type Name="Cliente">
       <Column Name="id_cliente" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

@@ -24,8 +24,17 @@ namespace ExamenFinalBD
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Principal());
+            Application.SetCompatibleTextRenderingDefault(true);
+            SkinManager.EnableFormSkins();
+            SkinManager.EnableMdiFormSkins();
+            DevExpress.XtraEditors.WindowsFormsSettings.SetPerMonitorDpiAware();
+            DevExpress.XtraEditors.WindowsFormsSettings.AllowDpiScale = true;
+            DevExpress.XtraEditors.WindowsFormsSettings.EnableFormSkins();
+
+            UserLookAndFeel.Default.SetSkinStyle("Office 2019 Colorful");
+            AppearanceObject.DefaultFont = new Font("Microsoft JhengHei UI", 8);
+
+            Application.Run(new  Cajero());
 
         }
     }
