@@ -70,6 +70,7 @@
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="HealthChecks.AzureSearch, Version=9.0.0.0, Culture=neutral, PublicKeyToken=2783471aaf72b3d9, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNetCore.HealthChecks.AzureSearch.9.0.0\lib\netstandard2.0\HealthChecks.AzureSearch.dll</HintPath>
     </Reference>
@@ -108,6 +109,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SplitPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFSplit.1.0.0\lib\net461\SplitPDF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -213,6 +217,12 @@
     <Compile Include="Tecnico\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tecnico\Retomar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tecnico\Retomar.Designer.cs">
+      <DependentUpon>Retomar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\UIUtils.cs" />
     <EmbeddedResource Include="CajeroClient.resx">
       <DependentUpon>CajeroClient.cs</DependentUpon>
@@ -242,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tecnico\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tecnico\Retomar.resx">
+      <DependentUpon>Retomar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

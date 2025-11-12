@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_ac0671_final" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql5113.site4now.net;Persist Security Info=True;User ID=db_ac0671_final_admin;Encrypt=False" SettingsObjectName="ExamenFinalBD.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Cliente" Member="Cliente">
     <Type Name="Cliente">
       <Column Name="id_cliente" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -23,6 +24,7 @@
       <Column Name="id_estado_contrato" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="id_usuario" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
       <Association Name="Contrato_Visita_tecnica" Member="Visita_tecnica" ThisKey="id_contrato" OtherKey="id_contrato" Type="Visita_tecnica" />
+      <Association Name="Contrato_Servicio" Member="Servicio" ThisKey="id_contrato" OtherKey="id_contrato" Type="Servicio" />
       <Association Name="Cliente_Contrato" Member="Cliente" ThisKey="id_cliente" OtherKey="id_cliente" Type="Cliente" IsForeignKey="true" />
       <Association Name="Estado_contrato_Contrato" Member="Estado_contrato" ThisKey="id_estado_contrato" OtherKey="id_estado_contrato" Type="Estado_contrato" IsForeignKey="true" />
     </Type>
@@ -93,6 +95,7 @@
       <Association Name="Visita_tecnica_Falla" Member="Visita_tecnica" ThisKey="id_visita_tecnica" OtherKey="id_visita_tecnica" Type="Visita_tecnica" IsForeignKey="true" />
       <Association Name="Tipo_falla_Falla" Member="Tipo_falla" ThisKey="id_tipo_falla" OtherKey="id_tipo_falla" Type="Tipo_falla" IsForeignKey="true" />
       <Association Name="Estado_falla_Falla" Member="Estado_falla" ThisKey="id_estado_falla" OtherKey="id_estado_falla" Type="Estado_falla" IsForeignKey="true" />
+      <Association Name="Tipo_servicio_Falla" Member="Tipo_servicio" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Tipo_servicio" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.repuesto_falla" Member="repuesto_falla">
@@ -127,6 +130,26 @@
     <Type Name="Estado_falla">
       <Column Name="id_estado_falla" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Estado_falla_Falla" Member="Falla" ThisKey="id_estado_falla" OtherKey="id_estado_falla" Type="Falla" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicio" Member="Servicio">
+    <Type Name="Servicio">
+      <Column Name="id_contrato" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="saldo_pendiente" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipo_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="id_instalacion_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Contrato_Servicio" Member="Contrato" ThisKey="id_contrato" OtherKey="id_contrato" Type="Contrato" IsForeignKey="true" />
+      <Association Name="Tipo_servicio_Servicio" Member="Tipo_servicio" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Tipo_servicio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_servicio" Member="Tipo_servicio">
+    <Type Name="Tipo_servicio">
+      <Column Name="id_tipo_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_tipo_servicio" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_categoria_servicio" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_servicio_Falla" Member="Falla" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Falla" />
+      <Association Name="Tipo_servicio_Servicio" Member="Servicio" ThisKey="id_tipo_servicio" OtherKey="id_tipo_servicio" Type="Servicio" />
     </Type>
   </Table>
 </Database>

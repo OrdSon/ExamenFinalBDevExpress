@@ -14,9 +14,11 @@ namespace ExamenFinalBD.Tecnico.BLL
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public string EstadoContr {  get; set; }
+        public string Visita { get; set; }    
         // para los repuestos
         public string IdRepuesto { get; set; }
         public string Repuesto {  get; set; }
         public decimal Precio { get; set; } 
+
     }
 }

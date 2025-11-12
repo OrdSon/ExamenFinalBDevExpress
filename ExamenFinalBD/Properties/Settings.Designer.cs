@@ -34,5 +34,16 @@ namespace ExamenFinalBD.Properties {
                 return ((string)(this["db_ac0671_finalConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql5113.site4now.net;Persist Security Info=True;User ID=db_ac0671_fin" +
+            "al_admin;Encrypt=False")]
+        public string DataSourceConnectionString {
+            get {
+                return ((string)(this["DataSourceConnectionString"]));
+            }
+        }
     }
 }
